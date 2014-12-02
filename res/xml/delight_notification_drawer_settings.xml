@@ -45,6 +45,12 @@
             android:title="@string/tuner_show_brightness_mode"
             sysui:defValue="true" />
 
+        <com.delight.settings.preferences.SecureSettingSwitchPreference
+            android:key="lockscreen_qs_disabled"
+            android:title="@string/lockscreen_qs_disabled_title"
+            android:summary="@string/lockscreen_qs_disabled_summary"
+            android:defaultValue="false" />
+
         <com.delight.settings.preferences.SystemSettingSwitchPreference
             android:key="qs_footer_warnings"
             android:title="@string/qs_footer_warnings_title"
