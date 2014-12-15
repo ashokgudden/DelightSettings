@@ -96,12 +96,17 @@
 
     <PreferenceCategory
         android:key="delight_system"
-        android:title="@string/delight_system"
-        android:summary="@string/app_ops_settings_summary" >
+        android:title="@string/delight_system" >
 
         <Preference
             android:title="@string/app_ops_settings"
+            android:summary="@string/app_ops_settings_summary"
             android:fragment="com.android.settings.applications.AppOpsSummary"/>
+
+        <PreferenceScreen
+            android:key="animations"
+            android:fragment="com.delight.settings.fragments.Animations"
+            android:title="@string/animations" />
     </PreferenceCategory>
 
 </PreferenceScreen>
