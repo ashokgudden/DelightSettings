@@ -61,6 +61,11 @@
             android:fragment="com.android.settings.applications.NotificationApps"
             android:title="@string/delight_notification_light_settings" />
 
+        <Preference
+            android:key="batterybar"
+            android:fragment="com.delight.settings.fragments.BatteryBarSettings"
+            android:title="@string/batterybar_title"/>
+
     </PreferenceCategory>
 
     <PreferenceCategory
