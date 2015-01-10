@@ -27,7 +27,7 @@
     <string name="volumerocker_settings_title">Volume and media</string>
     <string name="screen_settings_title">Display</string>
     <string name="other_settings_title">Other</string>
-    <string name="delight_leds">LED lights</string>
+    <string name="delight_leds">Battery &amp; LED Settings</string>
     <string name="delight_battery_light_settings">Battery charging light</string>
     <string name="delight_notification_light_settings">Notification light</string>
     <string name="recent_settings_title">Recents Panel</string>
