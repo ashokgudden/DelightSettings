@@ -35,6 +35,11 @@
         android:defaultValue="false" />
 
     <Preference
+        android:key="lockscreen_weather"
+        android:title="@string/lockscreen_weather_title"
+        android:fragment="com.delight.settings.fragments.LockScreenWeatherSettings" />
+
+    <Preference
             android:title="@string/lockscreen_shortcuts_title"
             android:summary="@string/lockscreen_shortcuts_summary">
         <intent android:action="android.intent.action.MAIN"
