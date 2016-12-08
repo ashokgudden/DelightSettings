@@ -103,7 +103,7 @@
             android:summary="@string/app_ops_settings_summary"
             android:fragment="com.android.settings.applications.AppOpsSummary"/>
 
-        <PreferenceScreen
+        <Preference
             android:key="animations"
             android:fragment="com.delight.settings.fragments.Animations"
             android:title="@string/animations" />
