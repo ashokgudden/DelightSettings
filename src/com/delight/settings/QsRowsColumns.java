@@ -32,9 +32,9 @@ public class QsRowsColumns extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
     private CustomSeekBarPreference mQsRowsPort;
-    private CustomSeekBarPreference mQsRowsLand;
     private CustomSeekBarPreference mQsColumnsPort;
     private CustomSeekBarPreference mQsColumnsLand;
+    private CustomSeekBarPreference mSysuiQqsCount;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -43,28 +43,34 @@ public class QsRowsColumns extends SettingsPreferenceFragment implements
         final ContentResolver resolver = getActivity().getContentResolver();
 
         int value = Settings.System.getIntForUser(resolver,
-                Settings.System.QS_ROWS_PORTRAIT, 3, UserHandle.USER_CURRENT);
-        mQsRowsPort = (CustomSeekBarPreference) findPreference("qs_rows_portrait");
+                Settings.System.QS_LAYOUT_ROWS, 3, UserHandle.USER_CURRENT);
+        mQsRowsPort = (CustomSeekBarPreference) findPreference("qs_layout_rows");
         mQsRowsPort.setValue(value);
         mQsRowsPort.setOnPreferenceChangeListener(this);
 
-        value = Settings.System.getIntForUser(resolver,
-                Settings.System.QS_ROWS_LANDSCAPE, 2, UserHandle.USER_CURRENT);
-        mQsRowsLand = (CustomSeekBarPreference) findPreference("qs_rows_landscape");
-        mQsRowsLand.setValue(value);
-        mQsRowsLand.setOnPreferenceChangeListener(this);
+//        value = Settings.System.getIntForUser(resolver,
+//                Settings.System.QS_ROWS_LANDSCAPE, 2, UserHandle.USER_CURRENT);
+//        mQsRowsLand = (CustomSeekBarPreference) findPreference("qs_rows_landscape");
+//        mQsRowsLand.setValue(value);
+//        mQsRowsLand.setOnPreferenceChangeListener(this);
 
         value = Settings.System.getIntForUser(resolver,
-                Settings.System.QS_COLUMNS_PORTRAIT, 5, UserHandle.USER_CURRENT);
-        mQsColumnsPort = (CustomSeekBarPreference) findPreference("qs_columns_portrait");
+                Settings.System.QS_LAYOUT_COLUMNS, 5, UserHandle.USER_CURRENT);
+        mQsColumnsPort = (CustomSeekBarPreference) findPreference("qs_layout_columns");
         mQsColumnsPort.setValue(value);
         mQsColumnsPort.setOnPreferenceChangeListener(this);
 
         value = Settings.System.getIntForUser(resolver,
-                Settings.System.QS_COLUMNS_LANDSCAPE, 5, UserHandle.USER_CURRENT);
-        mQsColumnsLand = (CustomSeekBarPreference) findPreference("qs_columns_landscape");
+                Settings.System.QS_LAYOUT_COLUMNS_LANDSCAPE, 5, UserHandle.USER_CURRENT);
+        mQsColumnsLand = (CustomSeekBarPreference) findPreference("qs_layout_columns_landscape");
         mQsColumnsLand.setValue(value);
         mQsColumnsLand.setOnPreferenceChangeListener(this);
+
+        value = Settings.Secure.getInt(resolver, Settings.Secure.QQS_COUNT, 6);
+        mSysuiQqsCount = (CustomSeekBarPreference) findPreference("sysui_qqs_count_key");
+        mSysuiQqsCount.setValue(value);
+        mSysuiQqsCount.setOnPreferenceChangeListener(this);
+
     }
 
     @Override
@@ -77,22 +83,22 @@ public class QsRowsColumns extends SettingsPreferenceFragment implements
         if (preference == mQsRowsPort) {
             int val = (Integer) newValue;
             Settings.System.putIntForUser(getContentResolver(),
-                    Settings.System.QS_ROWS_PORTRAIT, val, UserHandle.USER_CURRENT);
-            return true;
-        } else if (preference == mQsRowsLand) {
-            int val = (Integer) newValue;
-            Settings.System.putIntForUser(getContentResolver(),
-                    Settings.System.QS_ROWS_LANDSCAPE, val, UserHandle.USER_CURRENT);
+                    Settings.System.QS_LAYOUT_ROWS, val, UserHandle.USER_CURRENT);
             return true;
         } else if (preference == mQsColumnsPort) {
             int val = (Integer) newValue;
             Settings.System.putIntForUser(getContentResolver(),
-                    Settings.System.QS_COLUMNS_PORTRAIT, val, UserHandle.USER_CURRENT);
+                    Settings.System.QS_LAYOUT_COLUMNS, val, UserHandle.USER_CURRENT);
             return true;
         } else if (preference == mQsColumnsLand) {
             int val = (Integer) newValue;
             Settings.System.putIntForUser(getContentResolver(),
-                    Settings.System.QS_COLUMNS_LANDSCAPE, val, UserHandle.USER_CURRENT);
+                    Settings.System.QS_LAYOUT_COLUMNS_LANDSCAPE, val, UserHandle.USER_CURRENT);
+            return true;
+        } else if (preference == mSysuiQqsCount) {
+            int SysuiQqsCount = (Integer) newValue;
+            Settings.Secure.putInt(getContentResolver(),
+                    Settings.Secure.QQS_COUNT, SysuiQqsCount * 1);
             return true;
         }
         return false;

@@ -198,5 +198,5 @@
     <string name="battery_bar_high_color">High level color"</string>
     <string name="battery_bar_low_color">Low level color"</string>
 
-
+    <string name="qs_small_tiles_title">Small QS tiles</string>
 </resources>
