@@ -27,6 +27,12 @@
         android:dependency="navigation_bar_enabled"
         android:defaultValue="true" />
 
+    <com.delight.settings.preferences.SystemSettingSwitchPreference
+        android:key="pixel_nav_animation"
+        android:title="@string/pixel_navbar_anim_title"
+        android:summary="@string/pixel_navbar_anim_summary"
+        android:defaultValue="true" />
+
     <Preference
             android:title="@string/navbar_buttons_title"
             android:summary="@string/navbar_buttons_summary"
