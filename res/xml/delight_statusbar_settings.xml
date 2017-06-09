@@ -41,4 +41,9 @@
         android:max="10"
         settings:min="0"
         settings:units="" />
+
+    <Preference
+        android:key="status_bar_battery_style"
+        android:title="@string/battery_title"
+        android:fragment="com.delight.settings.fragments.StatusbarBatteryStyle" />
 </PreferenceScreen>
