@@ -108,6 +108,11 @@
             android:summary="%s"
             android:title="@string/ticker_mode_title" />
 
+    <Preference
+        android:key="custom_header_settings"
+        android:title="@string/custom_header_title"
+        android:fragment="com.delight.settings.fragments.CustomHeader" />
+
         <!--<Preference
                 android:title="@string/powern_notifications_title"
                 android:summary="@string/powern_notifications_summary">
