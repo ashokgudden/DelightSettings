@@ -52,7 +52,7 @@ public class StatusbarBatteryStyle extends SettingsPreferenceFragment implements
 
     @Override
     public int getMetricsCategory() {
-        return MetricsProto.MetricsEvent.VALIDUS;
+        return MetricsProto.MetricsEvent.DELIGHT;
     }
 
     @Override

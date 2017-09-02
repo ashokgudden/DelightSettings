@@ -109,7 +109,7 @@ public class LockScreenWeatherSettings extends SettingsPreferenceFragment implem
 
     @Override
     public int getMetricsCategory() {
-        return MetricsProto.MetricsEvent.VALIDUS;
+        return MetricsProto.MetricsEvent.DELIGHT;
     }
 
     private void updatePreference() {

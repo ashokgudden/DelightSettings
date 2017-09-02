@@ -107,6 +107,12 @@
             android:key="animations"
             android:fragment="com.delight.settings.fragments.Animations"
             android:title="@string/animations" />
+
+        <Preference
+             android:key="wakelock_blocker"
+             android:fragment="com.delight.settings.fragments.WakeLockBlocker"
+             android:title="@string/wakelock_blocker_title" />
+
     </PreferenceCategory>
 
 </PreferenceScreen>
