@@ -350,7 +350,7 @@ import com.android.settings.R;
 
         @Override
         public int getMetricsCategory() {
-            return MetricsProto.MetricsEvent.VALIDUS;
+            return MetricsProto.MetricsEvent.DELIGHT;
         }
 
     }
