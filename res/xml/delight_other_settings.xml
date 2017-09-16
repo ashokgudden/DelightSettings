@@ -34,6 +34,14 @@
         android:summary="@string/show_cpu_summary"
         android:defaultValue="false" />
 
+    <!-- Custom Rotation -->
+    <Preference
+        android:key="custom_rotation"
+        android:title="@string/custom_rotation_title"
+        android:summary="@string/custom_rotation_summary"
+        android:icon="@drawable/display_rotation_icon"
+        android:fragment="com.delight.settings.DisplayRotation" />
+
     <!-- OpenDelta Updates -->
     <PreferenceScreen
         android:key="delta_updates"
