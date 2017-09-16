@@ -194,4 +194,6 @@
     <string name="show_cpu_title">Show CPU info</string>
     <string name="show_cpu_summary">Screen overlay showing current CPU info</string>
 
+    <string name="custom_rotation_title">Custom Rotation</string>
+    <string name="custom_rotation_summary">Set custom rotation here</string>
 </resources>
