@@ -75,7 +75,7 @@
         <Preference
             android:key="delight_power_settings"
             android:fragment="com.delight.settings.PowerSettings"
-        android:title="@string/power_settings_title"/>
+            android:title="@string/power_settings_title"/>
 
         <Preference
             android:key="buttons_settings"
