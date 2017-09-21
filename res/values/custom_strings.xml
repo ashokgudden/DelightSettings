@@ -22,6 +22,7 @@
     <string name="notification_drawer_settings_title">Notifications and QS</string>
     <string name="statusbar_settings_title">Status bar</string>
     <string name="delight_sys">Misc</string>
+    <string name="delight_system">System</string>
     <string name="power_settings_title">Power</string>
     <string name="volumerocker_settings_title">Volume and media</string>
     <string name="screen_settings_title">Display</string>
@@ -212,4 +213,8 @@
     <!-- Toast icon -->
     <string name="toast_icon_title">App\'s icon in toast</string>
     <string name="toast_icon_summary">Display the app icon corresponding with the toast</string>
+
+    <string name="app_ops_settings">APP-OPS</string>
+    <string name="app_ops_settings_summary">Tweak permissions of individual apps </string>
+
 </resources>
