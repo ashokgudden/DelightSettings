@@ -83,6 +83,11 @@
         android:key="notifications_category"
         android:title="@string/notifications_category_title" >
 
+    <Preference
+        android:key="heads_up_notifications"
+        android:title="@string/heads_up_notifications"
+        android:fragment="com.delight.settings.fragments.HeadsUpSettings" />
+
         <ListPreference
             android:key="ticker_mode"
             android:entries="@array/ticker_mode_entries"
