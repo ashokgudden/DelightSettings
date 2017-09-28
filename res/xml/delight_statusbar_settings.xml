@@ -47,6 +47,12 @@
         android:title="@string/battery_title"
         android:fragment="com.delight.settings.fragments.StatusbarBatteryStyle" />
 
+     <com.delight.settings.preferences.SystemSettingSwitchPreference
+            android:key="status_bar_brightness_control"
+            android:title="@string/status_bar_toggle_brightness"
+            android:summary="@string/status_bar_toggle_brightness_summary"
+            android:defaultValue="false" />
+
     <com.delight.settings.preferences.SystemSettingSwitchPreference
             android:key="status_bar_ime_switcher"
             android:title="@string/ime_switcher_notify"
