@@ -43,27 +43,27 @@
 
     <com.gzr.wolvesden.preference.CustomSeekBarPreference
         android:key="gesture_anywhere_trigger_width"
-        android:summary="@string/trigger_width_summary"
+        android:title="@string/trigger_width_title"
         android:defaultValue="4"
-        settings:max="64"
+        android:max="64"
         settings:min="4"
         settings:units="px"
         android:dependency="gesture_anywhere_enabled" />
 
     <com.gzr.wolvesden.preference.CustomSeekBarPreference
         android:key="gesture_anywhere_trigger_top"
-        android:summary="@string/trigger_top_summary"
+        android:title="@string/trigger_top_title"
         android:defaultValue="0"
-        settings:max="99"
+        android:max="99"
         settings:min="0"
         settings:units="%"
         android:dependency="gesture_anywhere_enabled" />
 
     <com.gzr.wolvesden.preference.CustomSeekBarPreference
         android:key="gesture_anywhere_trigger_bottom"
-        android:summary="@string/trigger_bottom_summary"
+        android:title="@string/trigger_bottom_title"
         android:defaultValue="100"
-        settings:max="100"
+        android:max="100"
         settings:min="1"
         settings:units="%"
         android:dependency="gesture_anywhere_enabled" />
