@@ -103,6 +103,8 @@
 
     <!-- Enabble HW keys -->
     <string name="enable_hw_keys_title">Enable hardware keys</string>
+    <!-- Enable keys backlight-->
+    <string name="button_brightness_sw_title">Enable backlight</string>
 
     <!-- Smart pulldown-->
     <string name="smart_pulldown_title">Smart pulldown</string>
