@@ -29,7 +29,7 @@
         <com.delight.settings.preferences.SystemSettingSwitchPreference
             android:key="qs_tile_title_visibility"
             android:title="@string/qs_tile_title_visibility_title"
-            android:defaultValue="false" />
+            android:defaultValue="true" />
 
         <Preference
             android:key="custom_header_settings"
