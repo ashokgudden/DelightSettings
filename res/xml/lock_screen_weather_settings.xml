@@ -29,12 +29,12 @@
             android:summary="@string/weather_show_weather_summary"
             android:defaultValue="false" />
 
-        <com.delight.settings.preferences.SystemSettingSwitchPreference
+        <!--<com.delight.settings.preferences.SystemSettingSwitchPreference
             android:key="lock_screen_show_weather_location"
             android:title="@string/weather_show_location_title"
             android:summary="@string/weather_show_location_summary"
             android:defaultValue="false"
-            android:dependency="lock_screen_show_weather" />
+            android:dependency="lock_screen_show_weather" />-->
 
     <PreferenceCategory
         android:key="weather_cat_settings"
