@@ -14,7 +14,7 @@
  * limitations under the License
  */
 
-package com.abc.settings.preferences;
+package com.delight.settings.preferences;
 
 import android.content.Context;
 import android.content.res.TypedArray;

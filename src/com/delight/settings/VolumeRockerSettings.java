@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.abc.settings;
+package com.delight.settings;
 
 import android.content.ContentResolver;
 import android.content.res.Resources;
@@ -41,7 +41,7 @@ public class VolumeRockerSettings extends SettingsPreferenceFragment implements
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        addPreferencesFromResource(R.xml.abc_volumerocker_settings);
+        addPreferencesFromResource(R.xml.delight_volumerocker_settings);
         ContentResolver resolver = getActivity().getContentResolver();
 
         mLaunchPlayerHeadsetConnection = (ListPreference) findPreference(HEADSET_CONNECT_PLAYER);
@@ -61,7 +61,7 @@ public class VolumeRockerSettings extends SettingsPreferenceFragment implements
 
     @Override
     public int getMetricsCategory() {
-        return MetricsProto.MetricsEvent.ABC;
+        return MetricsProto.MetricsEvent.DELIGHT;
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {

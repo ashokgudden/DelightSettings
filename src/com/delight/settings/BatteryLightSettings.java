@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.abc.settings;
+package com.delight.settings;
 
 import android.content.ContentResolver;
 import android.content.res.Resources;
@@ -27,7 +27,7 @@ import android.provider.Settings;
 
 import com.android.internal.logging.nano.MetricsProto;
 
-import com.abc.settings.preferences.SystemSettingSwitchPreference;
+import com.delight.settings.preferences.SystemSettingSwitchPreference;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 
@@ -47,7 +47,7 @@ public class BatteryLightSettings extends SettingsPreferenceFragment implements
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        addPreferencesFromResource(R.xml.abc_battery_light_settings);
+        addPreferencesFromResource(R.xml.delight_battery_light_settings);
 
         PreferenceScreen prefSet = getPreferenceScreen();
         mColorCategory = (PreferenceCategory) findPreference("battery_light_cat");
@@ -101,7 +101,7 @@ public class BatteryLightSettings extends SettingsPreferenceFragment implements
 
     @Override
     public int getMetricsCategory() {
-        return MetricsProto.MetricsEvent.ABC;
+        return MetricsProto.MetricsEvent.DELIGHT;
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {

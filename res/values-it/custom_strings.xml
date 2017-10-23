@@ -14,20 +14,20 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="abc_settings_title">Impostazioni addizionali ROM</string>
-    <string name="abc_interface">Interfaccia</string>
-    <string name="lockscreen_abc_settings_title">Lockscreen e sicurezza</string>
+    <string name="delight_settings_title">Impostazioni addizionali ROM</string>
+    <string name="delight_interface">Interfaccia</string>
+    <string name="lockscreen_delight_settings_title">Lockscreen e sicurezza</string>
     <string name="navigationbar_settings_title">Navigazione</string>
     <string name="notification_drawer_settings_title">Notifiche e QS</string>
     <string name="statusbar_settings_title">Barra di stato</string>
-    <string name="abc_sys">Miscellaneo</string>
+    <string name="delight_sys">Miscellaneo</string>
     <string name="power_settings_title">Energia e tasto power</string>
     <string name="volumerocker_settings_title">Volume e media</string>
     <string name="screen_settings_title">Display</string>
     <string name="other_settings_title">Altro</string>
-    <string name="abc_leds">Luce LED</string>
-    <string name="abc_battery_light_settings">Luce caricamento batteria</string>
-    <string name="abc_notification_light_settings">Luce di notifica</string>
+    <string name="delight_leds">Luce LED</string>
+    <string name="delight_battery_light_settings">Luce caricamento batteria</string>
+    <string name="delight_notification_light_settings">Luce di notifica</string>
     <string name="recent_settings_title">Pannello Recenti</string>
 
     <string name="press_color_to_apply">Premi sul colore in basso per applicare</string>

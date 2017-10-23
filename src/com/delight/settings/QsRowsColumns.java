@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.abc.settings;
+package com.delight.settings;
 
 import android.content.ContentResolver;
 import android.content.res.Resources;
@@ -22,7 +22,7 @@ import android.os.UserHandle;
 import android.support.v7.preference.Preference;
 import android.provider.Settings;
 
-import com.abc.settings.preferences.CustomSeekBarPreference;
+import com.delight.settings.preferences.CustomSeekBarPreference;
 import com.android.internal.logging.nano.MetricsProto;
 
 import com.android.settings.R;
@@ -39,7 +39,7 @@ public class QsRowsColumns extends SettingsPreferenceFragment implements
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        addPreferencesFromResource(R.xml.abc_qs_rows_columns);
+        addPreferencesFromResource(R.xml.delight_qs_rows_columns);
         final ContentResolver resolver = getActivity().getContentResolver();
 
         int value = Settings.System.getIntForUser(resolver,
@@ -69,7 +69,7 @@ public class QsRowsColumns extends SettingsPreferenceFragment implements
 
     @Override
     public int getMetricsCategory() {
-        return MetricsProto.MetricsEvent.ABC;
+        return MetricsProto.MetricsEvent.DELIGHT;
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {

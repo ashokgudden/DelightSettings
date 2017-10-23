@@ -14,21 +14,21 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <!-- Main abc pref screens -->
-    <string name="abc_settings_title">Additional ROM settings</string>
-    <string name="abc_interface">Interface</string>
-    <string name="lockscreen_abc_settings_title">Lockscreen and Security</string>
+    <!-- Main delight pref screens -->
+    <string name="delight_settings_title">Additional ROM settings</string>
+    <string name="delight_interface">Interface</string>
+    <string name="lockscreen_delight_settings_title">Lockscreen and Security</string>
     <string name="navigationbar_settings_title">Navigation</string>
     <string name="notification_drawer_settings_title">Notifications and QS</string>
     <string name="statusbar_settings_title">Status bar</string>
-    <string name="abc_sys">Misc</string>
+    <string name="delight_sys">Misc</string>
     <string name="power_settings_title">Power</string>
     <string name="volumerocker_settings_title">Volume and media</string>
     <string name="screen_settings_title">Display</string>
     <string name="other_settings_title">Other</string>
-    <string name="abc_leds">LED lights</string>
-    <string name="abc_battery_light_settings">Battery charging light</string>
-    <string name="abc_notification_light_settings">Notification light</string>
+    <string name="delight_leds">LED lights</string>
+    <string name="delight_battery_light_settings">Battery charging light</string>
+    <string name="delight_notification_light_settings">Notification light</string>
     <string name="recent_settings_title">Recents Panel</string>
     <!-- Color Picker -->
     <string name="dialog_color_picker">Color Picker</string>

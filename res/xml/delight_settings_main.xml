@@ -18,69 +18,69 @@
         xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
     <PreferenceCategory
-        android:key="abc_interface"
-        android:title="@string/abc_interface">
+        android:key="delight_interface"
+        android:title="@string/delight_interface">
 
         <Preference
             android:key="navigation_options"
-            android:fragment="com.abc.settings.NavbarSettings"
+            android:fragment="com.delight.settings.NavbarSettings"
             android:title="@string/navigationbar_settings_title" />
 
         <Preference
-            android:key="abc_lockscreen_settings"
-            android:fragment="com.abc.settings.LockScreenSettings"
-            android:title="@string/lockscreen_abc_settings_title"/>
+            android:key="delight_lockscreen_settings"
+            android:fragment="com.delight.settings.LockScreenSettings"
+            android:title="@string/lockscreen_delight_settings_title"/>
 
         <Preference
-            android:key="abc_notification_drawer_settings"
-            android:fragment="com.abc.settings.NotificationDrawerSettings"
+            android:key="delight_notification_drawer_settings"
+            android:fragment="com.delight.settings.NotificationDrawerSettings"
             android:title="@string/notification_drawer_settings_title"/>
 
         <Preference
-            android:key="abc_statusbar_settings"
-            android:fragment="com.abc.settings.StatusBarSettings"
+            android:key="delight_statusbar_settings"
+            android:fragment="com.delight.settings.StatusBarSettings"
             android:title="@string/statusbar_settings_title"/>
 
         <Preference
-            android:key="abc_recent_settings"
-            android:fragment="com.abc.settings.RecentsSettings"
+            android:key="delight_recent_settings"
+            android:fragment="com.delight.settings.RecentsSettings"
         android:title="@string/recent_settings_title"/>
     </PreferenceCategory>
 
     <PreferenceCategory
-        android:key="abc_sys"
-        android:title="@string/abc_sys">
+        android:key="delight_sys"
+        android:title="@string/delight_sys">
 
         <Preference
-            android:key="abc_power_settings"
-            android:fragment="com.abc.settings.PowerSettings"
+            android:key="delight_power_settings"
+            android:fragment="com.delight.settings.PowerSettings"
         android:title="@string/power_settings_title"/>
 
         <Preference
-            android:key="abc_volumerocker_settings"
-            android:fragment="com.abc.settings.VolumeRockerSettings"
+            android:key="delight_volumerocker_settings"
+            android:fragment="com.delight.settings.VolumeRockerSettings"
             android:title="@string/volumerocker_settings_title"/>
 
         <Preference
-            android:key="abc_other_settings"
-            android:fragment="com.abc.settings.OtherSettings"
+            android:key="delight_other_settings"
+            android:fragment="com.delight.settings.OtherSettings"
         android:title="@string/other_settings_title"/>
 
     </PreferenceCategory>
 
     <PreferenceCategory
-        android:key="abc_leds"
-        android:title="@string/abc_leds" >
+        android:key="delight_leds"
+        android:title="@string/delight_leds" >
 
         <Preference
-                android:key="abc_charging_light"
-                android:fragment="com.abc.settings.BatteryLightSettings"
-                android:title="@string/abc_battery_light_settings" />
+                android:key="delight_charging_light"
+                android:fragment="com.delight.settings.BatteryLightSettings"
+                android:title="@string/delight_battery_light_settings" />
 
         <Preference
-            android:key="abc_notification_light"
+            android:key="delight_notification_light"
             android:fragment="com.android.settings.applications.NotificationApps"
-            android:title="@string/abc_notification_light_settings" />
+            android:title="@string/delight_notification_light_settings" />
 
     </PreferenceCategory>
 </PreferenceScreen>

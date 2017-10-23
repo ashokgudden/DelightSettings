@@ -21,19 +21,19 @@
         android:key="qs_cat"
         android:title="@string/qs_cat_title" >
 
-        <com.abc.settings.preferences.SystemSettingSwitchPreference
+        <com.delight.settings.preferences.SystemSettingSwitchPreference
             android:key="status_bar_quick_qs_pulldown"
             android:title="@string/status_bar_quick_qs_pulldown"
             android:summary="@string/status_bar_quick_qs_pulldown_summary"
             android:defaultValue="true" />
 
-        <com.abc.settings.preferences.SecureSettingSwitchPreference
+        <com.delight.settings.preferences.SecureSettingSwitchPreference
             android:key="qs_show_brightness"
             android:title="@string/qs_brightness_slider_title"
             android:summary="@string/qs_brightness_slider_summary"
             android:defaultValue="true"/>
 
-        <com.abc.settings.preferences.SystemSettingSwitchPreference
+        <com.delight.settings.preferences.SystemSettingSwitchPreference
             android:key="qs_footer_warnings"
             android:title="@string/qs_footer_warnings_title"
             android:summary="@string/qs_footer_warnings_summary"
@@ -41,10 +41,10 @@
 
         <Preference
             android:key="qs_rows_columns"
-            android:fragment="com.abc.settings.QsRowsColumns"
+            android:fragment="com.delight.settings.QsRowsColumns"
             android:title="@string/qs_rows_columns_title"/>
 
-        <com.abc.settings.preferences.SystemSettingSwitchPreference
+        <com.delight.settings.preferences.SystemSettingSwitchPreference
             android:key="qs_tile_title_visibility"
             android:title="@string/qs_tile_title_visibility_title"
             android:defaultValue="false" />
@@ -54,7 +54,7 @@
         android:key="notifications_category"
         android:title="@string/notifications_category_title" >
 
-        <com.abc.settings.preferences.SystemSettingSwitchPreference
+        <com.delight.settings.preferences.SystemSettingSwitchPreference
             android:key="less_boring_heads_up"
             android:title="@string/less_boring_heads_up_title"
             android:summary="@string/less_boring_heads_up_summary"

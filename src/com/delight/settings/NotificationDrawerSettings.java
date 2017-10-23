@@ -13,14 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.abc.settings;
+package com.delight.settings;
 
 import android.content.ContentResolver;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.UserHandle;
+import android.support.v7.preference.ListPreference;
 import android.support.v7.preference.Preference;
-import android.support.v14.preference.SwitchPreference;
+import android.support.v7.preference.PreferenceScreen;
 import android.provider.Settings;
 
 import com.android.internal.logging.nano.MetricsProto;
@@ -28,42 +29,43 @@ import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 
-public class NavbarSettings extends SettingsPreferenceFragment implements
+public class NotificationDrawerSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
-    private SwitchPreference mNavbarToggle;
+    private ListPreference mTickerMode;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        addPreferencesFromResource(R.xml.abc_navbar_settings);
-        ContentResolver resolver = getActivity().getContentResolver();
+        addPreferencesFromResource(R.xml.delight_notification_drawer_settings);
 
-        mNavbarToggle = (SwitchPreference) findPreference("navigation_bar_enabled");
-        boolean enabled = Settings.Secure.getIntForUser(
-                resolver, Settings.Secure.NAVIGATION_BAR_ENABLED,
-                getActivity().getResources().getBoolean(
-                com.android.internal.R.bool.config_showNavigationBar) ? 1 : 0,
-                UserHandle.USER_CURRENT) == 1;
-        mNavbarToggle.setChecked(enabled);
-        mNavbarToggle.setOnPreferenceChangeListener(this);
+        mTickerMode = (ListPreference) findPreference("ticker_mode");
+        mTickerMode.setOnPreferenceChangeListener(this);
+        int tickerMode = Settings.System.getIntForUser(getContentResolver(),
+                Settings.System.STATUS_BAR_SHOW_TICKER,
+                1, UserHandle.USER_CURRENT);
+        mTickerMode.setValue(String.valueOf(tickerMode));
+        mTickerMode.setSummary(mTickerMode.getEntry());
+
     }
 
     @Override
     public int getMetricsCategory() {
-        return MetricsProto.MetricsEvent.ABC;
+        return MetricsProto.MetricsEvent.DELIGHT;
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         ContentResolver resolver = getActivity().getContentResolver();
-        if (preference == mNavbarToggle) {
-            boolean value = (Boolean) newValue;
-            Settings.Secure.putIntForUser(getActivity().getContentResolver(),
-                    Settings.Secure.NAVIGATION_BAR_ENABLED, value ? 1 : 0,
-                    UserHandle.USER_CURRENT);
-            mNavbarToggle.setChecked(value);
+        if (preference.equals(mTickerMode)) {
+            int tickerMode = Integer.parseInt(((String) newValue).toString());
+            Settings.System.putIntForUser(getContentResolver(),
+                    Settings.System.STATUS_BAR_SHOW_TICKER, tickerMode, UserHandle.USER_CURRENT);
+            int index = mTickerMode.findIndexOfValue((String) newValue);
+            mTickerMode.setSummary(
+                    mTickerMode.getEntries()[index]);
             return true;
         }
+
         return false;
     }
 }

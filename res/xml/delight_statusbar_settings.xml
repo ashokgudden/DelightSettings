@@ -17,22 +17,28 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
-    <SwitchPreference
-        android:key="navigation_bar_enabled"
-        android:title="@string/navigation_bar_enabled_title" />
-
-    <com.abc.settings.preferences.SystemSettingSwitchPreference
-        android:key="double_tap_sleep_navbar"
-        android:title="@string/double_tap_sleep_navbar"
-        android:dependency="navigation_bar_enabled"
-        android:defaultValue="true" />
-
     <Preference
-            android:title="@string/navbar_buttons_title"
-            android:summary="@string/navbar_buttons_summary"
-            android:dependency="navigation_bar_enabled">
+            android:title="@string/status_bar_icon_blacklist_title"
+            android:summary="@string/status_bar_icon_blacklist_summary">
         <intent android:action="android.intent.action.MAIN"
                 android:targetPackage="com.android.systemui"
-                android:targetClass="com.android.systemui.tuner.NavBarTunerActivity" />
+                android:targetClass="com.android.systemui.tuner.StatusBarIconsTunerActivity" />
     </Preference>
+
+    <com.delight.settings.preferences.SystemSettingSwitchPreference
+        android:key="double_tap_sleep_gesture"
+        android:title="@string/double_tap_sleep_gesture_title"
+        android:defaultValue="true" />
+
+    <com.delight.settings.preferences.SystemSettingSwitchPreference
+        android:key="network_traffic_state"
+        android:title="@string/network_traffic_state_title"
+        android:defaultValue="true" />
+
+    <com.delight.settings.preferences.CustomSeekBarPreference
+        android:key="network_traffic_autohide_threshold"
+        android:title="@string/network_traffic_autohide_threshold_title"
+        android:max="10"
+        settings:min="0"
+        settings:units="" />
 </PreferenceScreen>

@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.abc.settings;
+package com.delight.settings;
 
 import android.content.ContentResolver;
 import android.content.res.Resources;
@@ -25,7 +25,7 @@ import android.support.v7.preference.PreferenceScreen;
 import android.provider.Settings;
 
 import com.android.internal.logging.nano.MetricsProto;
-import com.android.internal.util.abc.AbcUtils;
+import com.android.internal.util.delight.DelightUtils;
 
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
@@ -40,11 +40,11 @@ public class PowerSettings extends SettingsPreferenceFragment implements
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        addPreferencesFromResource(R.xml.abc_power_settings);
+        addPreferencesFromResource(R.xml.delight_power_settings);
         ContentResolver resolver = getActivity().getContentResolver();
         final PreferenceScreen prefScreen = getPreferenceScreen();
 
-        if (!AbcUtils.deviceHasFlashlight(getContext())) {
+        if (!DelightUtils.deviceHasFlashlight(getContext())) {
             Preference toRemove = prefScreen.findPreference(TORCH_POWER_BUTTON_GESTURE);
             if (toRemove != null) {
                 prefScreen.removePreference(toRemove);
@@ -61,7 +61,7 @@ public class PowerSettings extends SettingsPreferenceFragment implements
 
     @Override
     public int getMetricsCategory() {
-        return MetricsProto.MetricsEvent.ABC;
+        return MetricsProto.MetricsEvent.DELIGHT;
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {

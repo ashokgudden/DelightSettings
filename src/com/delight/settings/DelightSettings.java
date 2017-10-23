@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.abc.settings;
+package com.delight.settings;
 
 import android.os.Bundle;
 import android.support.v7.preference.Preference;
@@ -25,7 +25,7 @@ import com.android.internal.logging.nano.MetricsProto;
 
 import com.android.settings.SettingsPreferenceFragment;
 
-public class AbcSettings extends SettingsPreferenceFragment {
+public class DelightSettings extends SettingsPreferenceFragment {
 
     private PreferenceCategory mLedsCategory;
     private Preference mChargingLeds;
@@ -33,11 +33,11 @@ public class AbcSettings extends SettingsPreferenceFragment {
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
-        addPreferencesFromResource(R.xml.abc_settings_main);
+        addPreferencesFromResource(R.xml.delight_settings_main);
         PreferenceScreen prefSet = getPreferenceScreen();
 
-        mLedsCategory = (PreferenceCategory) findPreference("abc_leds");
-        mChargingLeds = (Preference) findPreference("abc_charging_light");
+        mLedsCategory = (PreferenceCategory) findPreference("delight_leds");
+        mChargingLeds = (Preference) findPreference("delight_charging_light");
         if (mChargingLeds != null
                 && !getResources().getBoolean(
                         com.android.internal.R.bool.config_intrusiveBatteryLed)) {
@@ -50,7 +50,7 @@ public class AbcSettings extends SettingsPreferenceFragment {
 
     @Override
     public int getMetricsCategory() {
-        return MetricsProto.MetricsEvent.ABC;
+        return MetricsProto.MetricsEvent.DELIGHT;
     }
 }
 

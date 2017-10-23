@@ -23,26 +23,26 @@
         android:entries="@array/torch_power_button_gesture_entries"
         android:entryValues="@array/torch_power_button_gesture_values" />
 
-    <com.abc.settings.preferences.SecureSettingSwitchPreference
+    <com.delight.settings.preferences.SecureSettingSwitchPreference
         android:key="lockscreen_power_menu_disabled"
         android:title="@string/lockscreen_power_menu_disabled_title"
         android:summary="@string/lockscreen_power_menu_disabled_summary"
         android:defaultValue="true" />
 
     <!-- THIS IS STILL BUGGY, BUT ALSO USELESS
-    <com.abc.settings.preferences.SecureSettingSwitchPreference
+    <com.delight.settings.preferences.SecureSettingSwitchPreference
         android:key="doze_always_on"
         android:title="@string/doze_always_on_title"
         android:summary="@string/doze_always_on_summary"
         android:defaultValue="false" />-->
 
-    <com.abc.settings.preferences.SystemSettingSwitchPreference
+    <com.delight.settings.preferences.SystemSettingSwitchPreference
         android:key="vibration_on_charge_state_changed"
         android:title="@string/vibration_on_charge_state_changed_title"
         android:summary="@string/vibration_on_charge_state_changed_summary"
         android:defaultValue="true" />
 
-    <com.abc.settings.preferences.SystemSettingSwitchPreference
+    <com.delight.settings.preferences.SystemSettingSwitchPreference
         android:key="wake_when_plugged_or_unplugged"
         android:title="@string/wake_when_plugged_or_unplugged_title"
         android:summary="@string/wake_when_plugged_or_unplugged_summary"
