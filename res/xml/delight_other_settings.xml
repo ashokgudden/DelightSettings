@@ -31,6 +31,11 @@
             android:defaultValue="30" />
     </PreferenceCategory>
 
+    <com.delight.settings.preferences.SystemSettingSwitchPreference
+        android:key="screenshot_sound"
+        android:title="@string/screenshot_sound_title"
+        android:defaultValue="true" />
+
       <!-- OpenDelta Updates -->
       <PreferenceScreen
         android:key="delta_updates"
