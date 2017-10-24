@@ -169,4 +169,8 @@
    <string name="deltaupdate_settings_title_summary">Configure Settings</string>
 
    <string name="screenshot_sound_title">Screenshot sound</string>
+
+    <!-- Matlog -->
+   <string name="matlog_title">Matlog</string>
+   <string name="matlog_title_summary">Collect logs for debug puruposes.</string>
 </resources>

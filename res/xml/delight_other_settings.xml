@@ -46,4 +46,17 @@
                 android:targetPackage="eu.chainfire.opendelta"
                 android:targetClass="eu.chainfire.opendelta.MainActivity" />
     </PreferenceScreen>
+
+      <!-- Matlog -->
+    <PreferenceScreen
+        android:key="matlog"
+        android:icon="@drawable/delight_matlog_icon"
+        android:title="@string/matlog_title"
+        android:summary="@string/matlog_title_summary"
+        android:persistent="false" >
+            <intent android:action="android.intent.action.MAIN"
+                android:targetPackage="org.omnirom.logcat"
+                android:targetClass="com.pluscubed.logcat.ui.LogcatActivity" />
+    </PreferenceScreen>
+
 </PreferenceScreen>
