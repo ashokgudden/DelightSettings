@@ -30,4 +30,15 @@
             android:summary="%s"
             android:defaultValue="30" />
     </PreferenceCategory>
+
+      <!-- OpenDelta Updates -->
+      <PreferenceScreen
+        android:key="delta_updates"
+        android:title="@string/deltaupdate_settings_title"
+        android:summary="@string/deltaupdate_settings_title_summary"
+        android:icon="@drawable/delight_opendelta_icon">
+            <intent android:action="android.intent.action.MAIN"
+                android:targetPackage="eu.chainfire.opendelta"
+                android:targetClass="eu.chainfire.opendelta.MainActivity" />
+    </PreferenceScreen>
 </PreferenceScreen>
