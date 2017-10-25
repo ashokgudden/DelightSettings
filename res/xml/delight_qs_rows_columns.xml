@@ -44,4 +44,5 @@
         android:max="9"
         settings:min="1"
         settings:units="" />
+
 </PreferenceScreen>

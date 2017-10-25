@@ -48,6 +48,13 @@
             android:key="qs_tile_title_visibility"
             android:title="@string/qs_tile_title_visibility_title"
             android:defaultValue="false" />
+
+        <com.delight.settings.preferences.SystemSettingSwitchPreference
+            android:key="qs_data_advanced"
+            android:title="@string/qs_data_advanced_title"
+            android:summary="@string/qs_data_advanced_summary"
+            android:defaultValue="true" />
+
     </PreferenceCategory>
 
     <PreferenceCategory
