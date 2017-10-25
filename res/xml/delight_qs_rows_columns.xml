@@ -44,4 +44,10 @@
         android:max="9"
         settings:min="1"
         settings:units="" />
+
+    <com.delight.settings.preferences.SystemSettingSwitchPreference
+        android:key="qs_data_advanced"
+        android:title="@string/qs_data_advanced_title"
+        android:summary="@string/qs_data_advanced_summary"
+        android:defaultValue="true" />
 </PreferenceScreen>
