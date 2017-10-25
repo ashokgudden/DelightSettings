@@ -34,7 +34,7 @@
     <com.delight.settings.preferences.CustomSeekBarPreference
         android:key="qs_columns_portrait"
         android:title="@string/qs_columns_portrait_title"
-        android:max="7"
+        android:max="9"
         settings:min="1"
         settings:units="" />
 
