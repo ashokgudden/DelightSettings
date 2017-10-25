@@ -53,8 +53,11 @@
     <string name="qs_data_advanced_title">Advanced data tile</string>
     <string name="qs_data_advanced_summary">Changes single or long click actions</string>
 
-    <string name="wifi_advanced_title">Advanced Wifi tile</string>
-    <string name="wifi_advanced_summary">Changes single or long click actions</string>
+    <string name="qs_wifi_advanced_title">Advanced Wifi tile</string>
+    <string name="qs_wifi_advanced_summary">Changes single or long click actions</string>
+
+    <string name="qs_bt_advanced_title">Advanced Bluetooth tile</string>
+    <string name="qs_bt_advanced_summary">Changes single or long click actions</string>
 
     <string name="volume_rocker_music_controls_title">Playback control</string>
     <string name="volume_rocker_music_controls_summary">When the screen is off, long-pressing the volume keys will seek music tracks</string>
