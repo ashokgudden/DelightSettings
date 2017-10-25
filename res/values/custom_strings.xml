@@ -181,4 +181,8 @@
     <!-- Matlog -->
    <string name="matlog_title">Matlog</string>
    <string name="matlog_title_summary">Collect logs for debug puruposes.</string>
+
+    <!-- MTP Dirty Hack -->
+    <string name="enable_mtp_dirtyhack_title">MTP instead Charging</string>
+    <string name="enable_mtp_dirtyhack_summary">Enable MTP instead Charging after connect to PC</string>
 </resources>
