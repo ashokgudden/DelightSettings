@@ -61,6 +61,18 @@
             android:summary="@string/wifi_advanced_summary"
             android:defaultValue="true" />
 
+        <com.delight.settings.preferences.SecureSettingSwitchPreference
+            android:key="qs_bt_easy_toggle"
+            android:title="@string/qs_bt_advanced_title"
+            android:summary="@string/qs_bt_advanced_summary"
+            android:defaultValue="true" />
+
+        <com.delight.settings.preferences.SecureSettingSwitchPreference
+            android:key="qs_bt_easy_toggle"
+            android:title="@string/qs_bt_advanced_title"
+            android:summary="@string/qs_bt_advanced_summary"
+            android:defaultValue="true" />
+
     </PreferenceCategory>
 
     <PreferenceCategory
