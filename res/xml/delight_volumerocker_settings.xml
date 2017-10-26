@@ -40,6 +40,14 @@
         android:summary="@string/volume_rocker_music_controls_summary"
         android:defaultValue="true" />
 
+    <!-- Safe Headset Volume Switch -->
+    <SwitchPreference
+        android:key="safe_headset_volume"
+        android:title="@string/safe_headset_volume_title"
+        android:summary="@string/safe_headset_volume_summary"
+        android:persistent="false"
+        android:defaultValue="true" />
+
     <ListPreference
         android:key="headset_connect_player"
         android:title="@string/headset_connect_player_title"
