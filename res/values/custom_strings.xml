@@ -187,4 +187,8 @@
 
     <string name="custom_rotation_title">Custom Rotation</string>
     <string name="custom_rotation_summary">Set custom rotation here</string>
+
+    <!-- Small quick settings scroller -->
+    <string name="qqs_scroll_title">Scroll small QS tiles</string>
+    <string name="qqs_scroll_summary">Allow scrolling through the small QS tiles</string>
 </resources>

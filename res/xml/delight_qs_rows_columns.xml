@@ -18,32 +18,31 @@
         xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
     <com.delight.settings.preferences.CustomSeekBarPreference
-        android:key="qs_rows_portrait"
+        android:key="qs_layout_rows"
         android:title="@string/qs_rows_portrait_title"
         android:max="5"
         settings:min="1"
         settings:units="" />
 
     <com.delight.settings.preferences.CustomSeekBarPreference
-        android:key="qs_rows_landscape"
-        android:title="@string/qs_rows_landscape_title"
-        android:max="3"
-        settings:min="1"
-        settings:units="" />
-
-    <com.delight.settings.preferences.CustomSeekBarPreference
-        android:key="qs_columns_portrait"
+        android:key="qs_layout_columns"
         android:title="@string/qs_columns_portrait_title"
         android:max="9"
         settings:min="1"
         settings:units="" />
 
     <com.delight.settings.preferences.CustomSeekBarPreference
-        android:key="qs_columns_landscape"
+        android:key="qs_layout_columns_landscape"
         android:title="@string/qs_columns_landscape_title"
         android:max="9"
         settings:min="1"
         settings:units="" />
+
+    <com.delight.settings.preferences.SystemSettingSwitchPreference
+        android:key="qs_quickbar_scroll_enabled"
+        android:title="@string/qqs_scroll_title"
+        android:summary="@string/qqs_scroll_summary"
+        android:defaultValue="false"/>
 
     <com.delight.settings.preferences.SecureSettingSwitchPreference
         android:key="qs_data_advanced"
