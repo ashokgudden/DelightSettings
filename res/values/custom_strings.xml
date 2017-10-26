@@ -193,4 +193,12 @@
     <string name="qqs_scroll_summary">Allow scrolling through the small QS tiles</string>
 
     <string name="tuner_show_brightness_mode">Show brightness mode switch</string>
+
+    <!-- Safe headset volume restore checkbox -->
+    <string name="ok">Okay</string>
+    <string name="cancel">Cancel</string>
+    <string name="attention">Attention</string>
+    <string name="safe_headset_volume_title">Safe headset volume</string>
+    <string name="safe_headset_volume_summary">Prevent loud volume levels when headset is first plugged in</string>
+    <string name="safe_headset_volume_warning_dialog_text">Listening at high volume for long periods may damage your hearing. Disable it with caution.</string>
 </resources>
