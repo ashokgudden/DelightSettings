@@ -37,28 +37,4 @@
         android:max="9"
         settings:min="1"
         settings:units="" />
-
-    <com.delight.settings.preferences.SystemSettingSwitchPreference
-        android:key="qs_quickbar_scroll_enabled"
-        android:title="@string/qqs_scroll_title"
-        android:summary="@string/qqs_scroll_summary"
-        android:defaultValue="false"/>
-
-    <com.delight.settings.preferences.SecureSettingSwitchPreference
-        android:key="qs_data_advanced"
-        android:title="@string/qs_data_advanced_title"
-        android:summary="@string/qs_data_advanced_summary"
-        android:defaultValue="true" />
-
-    <com.delight.settings.preferences.SecureSettingSwitchPreference
-        android:key="qs_wifi_easy_toggle"
-        android:title="@string/qs_wifi_advanced_title"
-        android:summary="@string/qs_wifi_advanced_summary"
-        android:defaultValue="true" />
-
-    <com.delight.settings.preferences.SecureSettingSwitchPreference
-        android:key="qs_bt_easy_toggle"
-        android:title="@string/qs_bt_advanced_title"
-        android:summary="@string/qs_bt_advanced_summary"
-        android:defaultValue="true" />
 </PreferenceScreen>
