@@ -18,7 +18,6 @@
     <string name="delight_settings_title">Additional ROM settings</string>
     <string name="delight_interface">Interface</string>
     <string name="lockscreen_delight_settings_title">Lockscreen and Security</string>
-    <string name="navigationbar_settings_title">Navigation</string>
     <string name="notification_drawer_settings_title">Notifications and QS</string>
     <string name="statusbar_settings_title">Status bar</string>
     <string name="delight_sys">Misc</string>
@@ -156,9 +155,6 @@
     <!-- Power menu on secure lockscreen -->
     <string name="lockscreen_power_menu_disabled_title">No power menu when locked</string>
     <string name="lockscreen_power_menu_disabled_summary">Disable power menu on secure lockscreen</string>
-
-    <!-- Toggle navigation bar -->
-    <string name="navigation_bar_enabled_title">Enable navigation bar</string>
 
     <string name="recents_icon_pack_title">Icon Pack</string>
     <string name="recents_icon_pack_summary">Apply a custom icon pack for Recents panel</string>
