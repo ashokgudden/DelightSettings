@@ -196,4 +196,6 @@
 
     <string name="custom_rotation_title">Custom Rotation</string>
     <string name="custom_rotation_summary">Set custom rotation here</string>
+
+    <string name="tuner_show_brightness_mode">Show brightness mode switch</string>
 </resources>

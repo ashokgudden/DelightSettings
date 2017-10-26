@@ -33,6 +33,11 @@
             android:summary="@string/qs_brightness_slider_summary"
             android:defaultValue="true"/>
 
+        <com.delight.settings.preferences.SecureSettingSwitchPreference
+            android:key="qs_show_brightness_mode"
+            android:title="@string/tuner_show_brightness_mode"
+            sysui:defValue="true" />
+
         <com.delight.settings.preferences.SystemSettingSwitchPreference
             android:key="qs_footer_warnings"
             android:title="@string/qs_footer_warnings_title"
