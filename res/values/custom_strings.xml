@@ -201,4 +201,7 @@
     <string name="safe_headset_volume_title">Safe headset volume</string>
     <string name="safe_headset_volume_summary">Prevent loud volume levels when headset is first plugged in</string>
     <string name="safe_headset_volume_warning_dialog_text">Listening at high volume for long periods may damage your hearing. Disable it with caution.</string>
+
+    <string name="fp_unlock_keystore_title">Unlock with just FP</string>
+    <string name="fp_unlock_keystore_summary">Unlock with just fingerprint after reboot or SysUI restart</string>
 </resources>
