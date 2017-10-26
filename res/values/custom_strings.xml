@@ -191,4 +191,6 @@
     <!-- Small quick settings scroller -->
     <string name="qqs_scroll_title">Scroll small QS tiles</string>
     <string name="qqs_scroll_summary">Allow scrolling through the small QS tiles</string>
+
+    <string name="tuner_show_brightness_mode">Show brightness mode switch</string>
 </resources>
