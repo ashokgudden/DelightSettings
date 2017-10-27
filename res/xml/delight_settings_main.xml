@@ -22,6 +22,11 @@
         android:title="@string/delight_interface">
 
         <Preference
+            android:key="navigation_options"
+            android:fragment="com.delight.settings.NavbarSettings"
+            android:title="@string/navigationbar_settings_title" />
+
+        <Preference
             android:key="delight_lockscreen_settings"
             android:fragment="com.delight.settings.LockScreenSettings"
             android:title="@string/lockscreen_delight_settings_title"/>
