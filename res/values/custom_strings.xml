@@ -205,7 +205,7 @@
     <string name="safe_headset_volume_warning_dialog_text">Listening at high volume for long periods may damage your hearing. Disable it with caution.</string>
 
     <string name="fp_unlock_keystore_title">Unlock with just FP</string>
-    <string name="fp_unlock_keystore_summary">Unlock with just fingerprint after reboot or SysUI restart</string>
+    <string name="fp_unlock_keystore_summary">Unlock device with fingerprint after reboot without PIN/Password/Pattern\nNote: at your own risk!</string>
 
     <!-- Toast icon -->
     <string name="toast_icon_title">App\'s icon in toast</string>
