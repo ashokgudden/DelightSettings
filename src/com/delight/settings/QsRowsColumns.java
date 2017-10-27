@@ -84,7 +84,14 @@ public class QsRowsColumns extends SettingsPreferenceFragment implements
             int val = (Integer) newValue;
             Settings.System.putIntForUser(getContentResolver(),
                     Settings.System.QS_LAYOUT_ROWS, val, UserHandle.USER_CURRENT);
-            return true;
+             return true;
+//                    Settings.System.QS_ROWS_PORTRAIT, val, UserHandle.USER_CURRENT);
+//            return true;
+//        } else if (preference == mQsRowsLand) {
+//            int val = (Integer) newValue;
+//            Settings.System.putIntForUser(getContentResolver(),
+//                    Settings.System.QS_ROWS_LANDSCAPE, val, UserHandle.USER_CURRENT);
+
         } else if (preference == mQsColumnsPort) {
             int val = (Integer) newValue;
             Settings.System.putIntForUser(getContentResolver(),
