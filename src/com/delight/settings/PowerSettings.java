@@ -34,8 +34,10 @@ public class PowerSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
     private static final String TORCH_POWER_BUTTON_GESTURE = "torch_power_button_gesture";
+    private static final String KEY_TORCH_LONG_PRESS_POWER_TIMEOUT = "torch_long_press_power_timeout";
 
     private ListPreference mTorchPowerButton;
+    private ListPreference mTorchLongPressPowerTimeout;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -46,8 +48,12 @@ public class PowerSettings extends SettingsPreferenceFragment implements
 
         if (!DelightUtils.deviceHasFlashlight(getContext())) {
             Preference toRemove = prefScreen.findPreference(TORCH_POWER_BUTTON_GESTURE);
+            Preference toRemove1 = prefScreen.findPreference(KEY_TORCH_LONG_PRESS_POWER_TIMEOUT);
             if (toRemove != null) {
                 prefScreen.removePreference(toRemove);
+            }
+            if (toRemove1 != null) {
+                prefScreen.removePreference(toRemove1);
             }
         } else {
             mTorchPowerButton = (ListPreference) findPreference(TORCH_POWER_BUTTON_GESTURE);
@@ -56,6 +62,15 @@ public class PowerSettings extends SettingsPreferenceFragment implements
             mTorchPowerButton.setValue(Integer.toString(mTorchPowerButtonValue));
             mTorchPowerButton.setSummary(mTorchPowerButton.getEntry());
             mTorchPowerButton.setOnPreferenceChangeListener(this);
+
+            if (mTorchPowerButtonValue == 2) {
+                mTorchLongPressPowerTimeout = (ListPreference) findPreference(KEY_TORCH_LONG_PRESS_POWER_TIMEOUT);
+                int torchLongPressPowerTimeout = Settings.System.getInt(resolver,
+                        Settings.System.TORCH_LONG_PRESS_POWER_TIMEOUT, 0);
+                mTorchLongPressPowerTimeout.setValue(Integer.toString(torchLongPressPowerTimeout));
+                mTorchLongPressPowerTimeout.setSummary(mTorchLongPressPowerTimeout.getEntry());
+                mTorchLongPressPowerTimeout.setOnPreferenceChangeListener(this);
+            }
         }
     }
 
@@ -78,7 +93,19 @@ public class PowerSettings extends SettingsPreferenceFragment implements
                 //if doubletap for torch is enabled, switch off double tap for camera
                 Settings.Secure.putInt(resolver, Settings.Secure.CAMERA_DOUBLE_TAP_POWER_GESTURE_DISABLED,
                         1);
+                mTorchLongPressPowerTimeout.setEnabled(false);
+            } else if (mTorchPowerButtonValue == 2) {
+                mTorchLongPressPowerTimeout.setEnabled(true);
+            } else if (mTorchPowerButtonValue == 0) {
+                mTorchLongPressPowerTimeout.setEnabled(false);
             }
+            return true;
+        } else if (preference == mTorchLongPressPowerTimeout) {
+            int mTorchLongPressPowerTimeoutValue = Integer.valueOf((String) newValue);
+            int index = mTorchLongPressPowerTimeout.findIndexOfValue((String) newValue);
+            mTorchLongPressPowerTimeout.setSummary(
+                    mTorchLongPressPowerTimeout.getEntries()[index]);
+            Settings.System.putInt(resolver, TORCH_LONG_PRESS_POWER_TIMEOUT, mTorchLongPressPowerTimeoutValue);
             return true;
         }
 
