@@ -41,7 +41,7 @@ import android.widget.ExpandableListView;
 import android.widget.TextView;
 
 import com.android.settings.R;
-import com.gzr.wolvesden.gestureanywhere.ShortcutPickHelper.AppExpandableAdapter.GroupInfo;
+import com.delight.settings.gestureanywhere.ShortcutPickHelper.AppExpandableAdapter.GroupInfo;
 
 public class ShortcutPickHelper {
 

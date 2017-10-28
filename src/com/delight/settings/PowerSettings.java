@@ -105,7 +105,7 @@ public class PowerSettings extends SettingsPreferenceFragment implements
             int index = mTorchLongPressPowerTimeout.findIndexOfValue((String) newValue);
             mTorchLongPressPowerTimeout.setSummary(
                     mTorchLongPressPowerTimeout.getEntries()[index]);
-            Settings.System.putInt(resolver, TORCH_LONG_PRESS_POWER_TIMEOUT, mTorchLongPressPowerTimeoutValue);
+            Settings.System.putInt(resolver, Settings.System.TORCH_LONG_PRESS_POWER_TIMEOUT, mTorchLongPressPowerTimeoutValue);
             return true;
         }
 

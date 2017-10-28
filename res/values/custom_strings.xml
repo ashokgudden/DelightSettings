@@ -111,6 +111,7 @@
     <string name="status_bar_icon_blacklist_summary">Configure what icons are shown on status bar</string>
     <string name="lockscreen_shortcuts_title">Lockscreen shortcuts</string>
     <string name="lockscreen_shortcuts_summary">Lockscreen bottom shortcuts</string>
+    <string name="button_title">Buttons</string>
     <string name="navbar_buttons_title">Navbar buttons</string>
     <string name="navbar_buttons_summary">Navbar layout and custom buttons</string>
     <string name="qs_brightness_slider_title">Brightness slider</string>
@@ -236,5 +237,17 @@
     <string name="style_disabled_summary">Custom header image is OFF</string>
     <string name="header_provider_disabled">Disabled</string>
     <string name="custom_header_title">Custom header image</string>
+
+    <!-- Display : Rotation -->
+    <string name="category_display">Display</string>
+    <string name="display_rotation_title">Rotation</string>
+    <string name="display_rotation_disabled">Disabled</string>
+    <string name="display_rotation_unit">degrees</string>
+    <string name="display_rotation_category_title">Rotation modes</string>
+    <string name="display_rotation_0_title">0 degrees</string>
+    <string name="display_rotation_90_title">90 degrees</string>
+    <string name="display_rotation_180_title">180 degrees</string>
+    <string name="display_rotation_270_title">270 degrees</string>
+    <string name="display_lockscreen_rotation_title">Lock screen</string>
 
 </resources>

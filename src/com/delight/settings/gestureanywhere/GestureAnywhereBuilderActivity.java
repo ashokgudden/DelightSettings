@@ -43,7 +43,7 @@ import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.BitmapDrawable;
 import com.android.settings.R;
-import com.gzr.wolvesden.gestureanywhere.ShortcutPickHelper;
+import com.delight.settings.gestureanywhere.ShortcutPickHelper;
 
 import java.util.Map;
 import java.util.Collections;

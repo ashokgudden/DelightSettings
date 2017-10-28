@@ -90,9 +90,11 @@ public class VolumeRockerSettings extends SettingsPreferenceFragment implements
                     mLaunchPlayerHeadsetConnectionValue, UserHandle.USER_CURRENT);
             return true;
         } else if (KEY_SAFE_HEADSET_VOLUME.equals(key)) {
-            if ((Boolean) newValue) {
+            boolean value = (Boolean) newValue;
+            if (value) {
                     Settings.System.putInt(getActivity().getContentResolver(),
                             Settings.System.SAFE_HEADSET_VOLUME, 1);
+                    mSafeHeadsetVolume.setChecked(value);
             } else {
                     showDialogInner(DLG_SAFE_HEADSET_VOLUME);
             }
@@ -142,6 +144,7 @@ public class VolumeRockerSettings extends SettingsPreferenceFragment implements
                                    public void onClick(DialogInterface dialog, int which) {
                                        Settings.System.putInt(getOwner().getActivity().getContentResolver(),
                                        Settings.System.SAFE_HEADSET_VOLUME, 0);
+                                       getOwner().mSafeHeadsetVolume.setChecked(false);
                                    }
                                })
                            .setNegativeButton(R.string.cancel,
