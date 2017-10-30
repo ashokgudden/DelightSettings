@@ -15,7 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
-package com.delight.settings.fragments;
+package com.delight.settings;
 
 import com.android.internal.logging.nano.MetricsProto;
 

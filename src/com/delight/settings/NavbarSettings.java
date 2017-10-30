@@ -21,6 +21,7 @@ import android.os.Bundle;
 import android.os.UserHandle;
 import android.support.v7.preference.Preference;
 import android.support.v14.preference.SwitchPreference;
+import com.delight.settings.preferences.SystemSettingSwitchPreference;
 import android.provider.Settings;
 
 import com.android.internal.logging.nano.MetricsProto;
@@ -31,7 +32,7 @@ import com.android.settings.SettingsPreferenceFragment;
 public class NavbarSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
-    private SwitchPreference mNavbarToggle;
+    private SystemSettingSwitchPreference mNavbarToggle;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -39,7 +40,7 @@ public class NavbarSettings extends SettingsPreferenceFragment implements
         addPreferencesFromResource(R.xml.delight_navbar_settings);
         ContentResolver resolver = getActivity().getContentResolver();
 
-        mNavbarToggle = (SwitchPreference) findPreference("navigation_bar_enabled");
+        mNavbarToggle = (SystemSettingSwitchPreference) findPreference("navigation_bar_enabled");
         boolean enabled = Settings.Secure.getIntForUser(
                 resolver, Settings.Secure.NAVIGATION_BAR_ENABLED,
                 getActivity().getResources().getBoolean(

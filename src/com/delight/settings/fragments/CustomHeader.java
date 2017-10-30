@@ -15,7 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
 */
-package com.delight.settings.fragments.CustomHeader;
+package com.delight.settings.fragments;
 
 import android.content.Context;
 import android.content.Intent;
