@@ -17,10 +17,19 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
-    <Preference
-       android:key="gesture_anywhere"
-       android:fragment="com.delight.settings.gestureanywhere.GestureAnywhereSettings"
-       android:title="@string/gesture_anywhere_title" />
+    <PreferenceCategory
+        android:key="apps_security"
+        android:title="@string/apps_security_options_title" >
+
+        <ListPreference
+            android:key="sms_outgoing_check_max_count"
+            android:title="@string/sms_outgoing_check_max_count_title"
+            android:dialogTitle="@string/sms_outgoing_check_max_count_dialog"
+            android:entries="@array/sms_outgoing_check_max_count_entries"
+            android:entryValues="@array/sms_outgoing_check_max_count_values"
+            android:summary="%s"
+            android:defaultValue="30" />
+    </PreferenceCategory>
 
     <com.delight.settings.preferences.SystemSettingSwitchPreference
         android:key="screenshot_sound"
@@ -37,12 +46,6 @@
         android:key="show_cpu_overlay"
         android:title="@string/show_cpu_title"
         android:summary="@string/show_cpu_summary"
-        android:defaultValue="false" />
-
-    <com.delight.settings.preferences.SystemSettingSwitchPreference
-        android:key="toast_icon"
-        android:title="@string/toast_icon_title"
-        android:summary="@string/toast_icon_summary"
         android:defaultValue="false" />
 
     <!-- Custom Rotation -->
@@ -76,17 +79,4 @@
                 android:targetClass="com.pluscubed.logcat.ui.LogcatActivity" />
     </PreferenceScreen>
 
-    <PreferenceCategory
-        android:key="apps_security"
-        android:title="@string/apps_security_options_title" >
-
-        <ListPreference
-            android:key="sms_outgoing_check_max_count"
-            android:title="@string/sms_outgoing_check_max_count_title"
-            android:dialogTitle="@string/sms_outgoing_check_max_count_dialog"
-            android:entries="@array/sms_outgoing_check_max_count_entries"
-            android:entryValues="@array/sms_outgoing_check_max_count_values"
-            android:summary="%s"
-            android:defaultValue="30" />
-    </PreferenceCategory>
 </PreferenceScreen>
