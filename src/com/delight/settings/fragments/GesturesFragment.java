@@ -16,14 +16,18 @@
 
 package com.delight.settings.fragments;
 
+import android.content.ContentResolver;
 import android.content.ComponentName;
 import android.content.Context;
+import android.os.Bundle;
 import android.os.UserHandle;
 import android.provider.SearchIndexableResource;
 import android.provider.Settings;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.annotation.VisibleForTesting;
+import android.support.v7.preference.Preference;
+import com.delight.settings.preferences.SystemSettingSwitchPreference;
 
 import com.android.internal.hardware.AmbientDisplayConfiguration;
 import com.android.internal.logging.nano.MetricsProto;
@@ -43,7 +47,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class GesturesFragment extends DashboardFragment {
+import com.android.settings.SettingsPreferenceFragment;
+
+public class GesturesFragment extends SettingsPreferenceFragment implements
+        Preference.OnPreferenceChangeListener {
 
     private static final String TAG = "GesturesFragment";
 
@@ -55,6 +62,23 @@ public class GesturesFragment extends DashboardFragment {
     private static final String KEY_PICK_UP = "gesture_pick_up_input_summary";
 
     private AmbientDisplayConfiguration mAmbientDisplayConfig;
+    private SystemSettingSwitchPreference mNavbarSleep;
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        addPreferencesFromResource(R.xml.gestures_prefs);
+        ContentResolver resolver = getActivity().getContentResolver();
+
+        mNavbarSleep = (SystemSettingSwitchPreference) findPreference("double_tap_sleep_navbar");
+        boolean enabled = Settings.Secure.getIntForUser(
+                resolver, Settings.Secure.NAVIGATION_BAR_ENABLED,
+                getActivity().getResources().getBoolean(
+                com.android.internal.R.bool.config_showNavigationBar) ? 1 : 0,
+                UserHandle.USER_CURRENT) == 1;
+        mNavbarSleep.setChecked(enabled);
+        mNavbarSleep.setOnPreferenceChangeListener(this);
+    }
 
     @Override
     public int getMetricsCategory() {
@@ -67,17 +91,25 @@ public class GesturesFragment extends DashboardFragment {
     }
 
     @Override
-    protected int getPreferenceScreenResId() {
-        return R.xml.gestures_prefs;
-    }
-
-    @Override
     protected List<PreferenceController> getPreferenceControllers(Context context) {
         if (mAmbientDisplayConfig == null) {
             mAmbientDisplayConfig = new AmbientDisplayConfiguration(context);
         }
 
         return buildPreferenceControllers(context, getLifecycle(), mAmbientDisplayConfig);
+    }
+
+    public boolean onPreferenceChange(Preference preference, Object newValue) {
+        ContentResolver resolver = getActivity().getContentResolver();
+        if (preference == mNavbarSleep) {
+            boolean value = (Boolean) newValue;
+            Settings.Secure.putIntForUser(getActivity().getContentResolver(),
+                    Settings.Secure.DOUBLE_TAP_SLEEP_NAVBAR, value ? 1 : 0,
+                    UserHandle.USER_CURRENT);
+            mNavbarSleep.setChecked(value);
+            return true;
+        }
+        return false;
     }
 
     private static List<PreferenceController> buildPreferenceControllers(@NonNull Context context,

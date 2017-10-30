@@ -41,8 +41,11 @@
     <string name="set">Set</string>
     <string name="color_default">Default</string>
 
-    <string name="double_tap_sleep_navbar">Double tap to sleep on navbar</string>
-    <string name="double_tap_sleep_lockscreen">Double tap to sleep on lockscreen</string>
+    <!-- Double tap preferences. -->
+    <string name="doubletap_preference_title">Double tap to sleep</string>
+    <string name="double_tap_sleep_gesture_statusbar_title">Statusbar</string>
+    <string name="double_tap_sleep_navbar">Navbar</string>
+    <string name="double_tap_sleep_lockscreen">Lockscreen</string>
 
     <string name="swap_volume_buttons">Swap volume buttons rotation based</string>
     <string name="volume_keys_control_media_stream_title">Volume keys control media volume</string>
@@ -103,8 +106,6 @@
     <!-- QS footer warnings -->
     <string name="qs_footer_warnings_title">QS footer warnings</string>
     <string name="qs_footer_warnings_summary">Display a warning at bottom of QS panel when network is monitored by external apps or vpn</string>
-
-    <string name="double_tap_sleep_gesture_title">Double tap status bar to sleep</string>
 
     <!--SysUI tuner options -->
     <string name="status_bar_icon_blacklist_title">Status bar icons</string>
