@@ -42,6 +42,7 @@ import com.android.settings.gestures.DoubleTwistPreferenceController;
 import com.android.settings.gestures.PickupGesturePreferenceController;
 import com.android.settings.gestures.SwipeToNotificationPreferenceController;
 import com.android.settings.search.BaseSearchIndexProvider;
+import com.android.settings.search.Indexable;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -50,7 +51,7 @@ import java.util.List;
 import com.android.settings.SettingsPreferenceFragment;
 
 public class GesturesFragment extends SettingsPreferenceFragment implements
-        Preference.OnPreferenceChangeListener {
+        Preference.OnPreferenceChangeListener, Indexable {
 
     private static final String TAG = "GesturesFragment";
 

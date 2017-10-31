@@ -32,6 +32,7 @@ public class QsRowsColumns extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
     private CustomSeekBarPreference mQsRowsPort;
+    private CustomSeekBarPreference mQsRowsLand;
     private CustomSeekBarPreference mQsColumnsPort;
     private CustomSeekBarPreference mQsColumnsLand;
     private CustomSeekBarPreference mSysuiQqsCount;
