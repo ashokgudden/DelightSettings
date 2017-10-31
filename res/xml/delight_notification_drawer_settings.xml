@@ -22,6 +22,16 @@
         android:title="@string/qs_cat_title" >
 
         <Preference
+            android:key="qs_rows_columns"
+            android:fragment="com.delight.settings.QsRowsColumns"
+            android:title="@string/qs_rows_columns_title"/>
+
+        <com.delight.settings.preferences.SystemSettingSwitchPreference
+            android:key="qs_tile_title_visibility"
+            android:title="@string/qs_tile_title_visibility_title"
+            android:defaultValue="false" />
+
+        <Preference
             android:key="custom_header_settings"
             android:title="@string/custom_header_title"
             android:fragment="com.delight.settings.fragments.CustomHeader" />
@@ -62,16 +72,6 @@
             android:title="@string/qs_footer_warnings_title"
             android:summary="@string/qs_footer_warnings_summary"
             android:defaultValue="true" />
-
-        <Preference
-            android:key="qs_rows_columns"
-            android:fragment="com.delight.settings.QsRowsColumns"
-            android:title="@string/qs_rows_columns_title"/>
-
-        <com.delight.settings.preferences.SystemSettingSwitchPreference
-            android:key="qs_tile_title_visibility"
-            android:title="@string/qs_tile_title_visibility_title"
-            android:defaultValue="false" />
 
         <com.delight.settings.preferences.SystemSettingSwitchPreference
             android:key="qs_quickbar_scroll_enabled"

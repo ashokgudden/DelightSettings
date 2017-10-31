@@ -48,11 +48,11 @@ public class QsRowsColumns extends SettingsPreferenceFragment implements
         mQsRowsPort.setValue(value);
         mQsRowsPort.setOnPreferenceChangeListener(this);
 
-//        value = Settings.System.getIntForUser(resolver,
-//                Settings.System.QS_ROWS_LANDSCAPE, 2, UserHandle.USER_CURRENT);
-//        mQsRowsLand = (CustomSeekBarPreference) findPreference("qs_rows_landscape");
-//        mQsRowsLand.setValue(value);
-//        mQsRowsLand.setOnPreferenceChangeListener(this);
+        value = Settings.System.getIntForUser(resolver,
+                Settings.System.QS_LAYOUT_ROWS_LANDSCAPE, 2, UserHandle.USER_CURRENT);
+        mQsRowsLand = (CustomSeekBarPreference) findPreference("qs_rows_landscape");
+        mQsRowsLand.setValue(value);
+        mQsRowsLand.setOnPreferenceChangeListener(this);
 
         value = Settings.System.getIntForUser(resolver,
                 Settings.System.QS_LAYOUT_COLUMNS, 5, UserHandle.USER_CURRENT);
@@ -85,13 +85,11 @@ public class QsRowsColumns extends SettingsPreferenceFragment implements
             Settings.System.putIntForUser(getContentResolver(),
                     Settings.System.QS_LAYOUT_ROWS, val, UserHandle.USER_CURRENT);
              return true;
-//                    Settings.System.QS_ROWS_PORTRAIT, val, UserHandle.USER_CURRENT);
-//            return true;
-//        } else if (preference == mQsRowsLand) {
-//            int val = (Integer) newValue;
-//            Settings.System.putIntForUser(getContentResolver(),
-//                    Settings.System.QS_ROWS_LANDSCAPE, val, UserHandle.USER_CURRENT);
-
+        } else if (preference == mQsRowsLand) {
+            int val = (Integer) newValue;
+            Settings.System.putIntForUser(getContentResolver(),
+                    Settings.System.QS_LAYOUT_ROWS_LANDSCAPE, val, UserHandle.USER_CURRENT);
+             return true;
         } else if (preference == mQsColumnsPort) {
             int val = (Integer) newValue;
             Settings.System.putIntForUser(getContentResolver(),
