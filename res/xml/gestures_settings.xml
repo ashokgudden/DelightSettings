@@ -24,7 +24,7 @@
         android:key="gesture_settings_category"
         android:title="@string/gesture_preference_inside_title">
 
-    <org.lineageos.internal.lineageparts.LINEAGEPartsPreference
+    <org.lineageos.internal.lineageparts.LineagePartsPreference
         android:key="touchscreen_gesture_settings"
         lineage:requiresFeature="lineagehardware:FEATURE_TOUCHSCREEN_GESTURES" />
 
