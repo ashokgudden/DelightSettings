@@ -252,6 +252,9 @@
     <string name="display_lockscreen_rotation_title">Lock screen</string>
 
     <!-- Touchscreen gesture settings -->
+    <string name="gesture_preference_title">All Gestures in one place.</string>
+    <string name="gesture_preference_inside_title">Gestures.</string>
+    <string name="gesture_preference_aosp">AOSP gestures</string>
     <string name="touchscreen_gesture_settings_title">Touchscreen gestures</string>
     <string name="touchscreen_gesture_settings_summary">Perform various touchscreen gestures for quick actions</string>
 
