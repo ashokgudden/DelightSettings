@@ -32,7 +32,7 @@ import com.android.settings.SettingsPreferenceFragment;
 public class NavbarSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
-    private SystemSettingSwitchPreference mNavbarToggle;
+    private SwitchPreference mNavbarToggle;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -40,9 +40,9 @@ public class NavbarSettings extends SettingsPreferenceFragment implements
         addPreferencesFromResource(R.xml.delight_navbar_settings);
         ContentResolver resolver = getActivity().getContentResolver();
 
-        mNavbarToggle = (SystemSettingSwitchPreference) findPreference("navigation_bar_enabled");
+        mNavbarToggle = (SwitchPreference) findPreference("navigation_bar_show");
         boolean enabled = Settings.Secure.getIntForUser(
-                resolver, Settings.Secure.NAVIGATION_BAR_ENABLED,
+                resolver, Settings.Secure.NAVIGATION_BAR_SHOW,
                 getActivity().getResources().getBoolean(
                 com.android.internal.R.bool.config_showNavigationBar) ? 1 : 0,
                 UserHandle.USER_CURRENT) == 1;
@@ -60,7 +60,7 @@ public class NavbarSettings extends SettingsPreferenceFragment implements
         if (preference == mNavbarToggle) {
             boolean value = (Boolean) newValue;
             Settings.Secure.putIntForUser(getActivity().getContentResolver(),
-                    Settings.Secure.NAVIGATION_BAR_ENABLED, value ? 1 : 0,
+                    Settings.Secure.NAVIGATION_BAR_SHOW, value ? 1 : 0,
                     UserHandle.USER_CURRENT);
             mNavbarToggle.setChecked(value);
             return true;
