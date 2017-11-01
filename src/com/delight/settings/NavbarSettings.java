@@ -41,8 +41,8 @@ public class NavbarSettings extends SettingsPreferenceFragment implements
         ContentResolver resolver = getActivity().getContentResolver();
 
         mNavbarToggle = (SwitchPreference) findPreference("navigation_bar_show");
-        boolean enabled = Settings.Secure.getIntForUser(
-                resolver, Settings.Secure.NAVIGATION_BAR_SHOW,
+        boolean enabled = Settings.System.getIntForUser(
+                resolver, Settings.System.NAVIGATION_BAR_SHOW,
                 getActivity().getResources().getBoolean(
                 com.android.internal.R.bool.config_showNavigationBar) ? 1 : 0,
                 UserHandle.USER_CURRENT) == 1;
@@ -59,8 +59,8 @@ public class NavbarSettings extends SettingsPreferenceFragment implements
         ContentResolver resolver = getActivity().getContentResolver();
         if (preference == mNavbarToggle) {
             boolean value = (Boolean) newValue;
-            Settings.Secure.putIntForUser(getActivity().getContentResolver(),
-                    Settings.Secure.NAVIGATION_BAR_SHOW, value ? 1 : 0,
+            Settings.System.putIntForUser(getActivity().getContentResolver(),
+                    Settings.System.NAVIGATION_BAR_SHOW, value ? 1 : 0,
                     UserHandle.USER_CURRENT);
             mNavbarToggle.setChecked(value);
             return true;
