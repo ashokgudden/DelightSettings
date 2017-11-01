@@ -71,7 +71,7 @@ public class PowerSettings extends SettingsPreferenceFragment implements
                 mTorchLongPressPowerTimeout.setValue(Integer.toString(torchLongPressPowerTimeout));
                 mTorchLongPressPowerTimeout.setSummary(mTorchLongPressPowerTimeout.getEntry());
                 mTorchLongPressPowerTimeout.setOnPreferenceChangeListener(this);
-            } else if (mTorchPowerButtonValue == 1) || (mTorchPowerButtonValue == 0) {
+            } else if ((mTorchPowerButtonValue == 1) || (mTorchPowerButtonValue == 0)) {
                 mTorchLongPressPowerTimeout.setEnabled(false);
             }
         }
