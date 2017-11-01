@@ -51,7 +51,7 @@ public class QsRowsColumns extends SettingsPreferenceFragment implements
 
         value = Settings.System.getIntForUser(resolver,
                 Settings.System.QS_LAYOUT_ROWS_LANDSCAPE, 2, UserHandle.USER_CURRENT);
-        mQsRowsLand = (CustomSeekBarPreference) findPreference("qs_rows_landscape");
+        mQsRowsLand = (CustomSeekBarPreference) findPreference("qs_layout_rows_landscape");
         mQsRowsLand.setValue(value);
         mQsRowsLand.setOnPreferenceChangeListener(this);
 
