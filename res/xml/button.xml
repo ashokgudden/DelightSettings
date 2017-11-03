@@ -19,10 +19,15 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
-    <Preference
+    <!-- AlertSlider Settings -->
+    <PreferenceScreen
         android:key="alert_slider_settings"
         android:title="@string/alert_slider_title"
-        android:fragment="com.cyanogenmod.settings.device.ButtonSettings" />
+        android:persistent="false" >
+           <intent android:action="android.intent.action.MAIN"
+               android:targetPackage="com.cyanogenmod.settings.device"
+               android:targetClass="com.cyanogenmod.settings.device.ButtonSettings" />
+    </PreferenceScreen>
 
     <SwitchPreference
         android:key="enable_hw_keys"

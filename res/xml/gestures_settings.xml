@@ -37,10 +37,15 @@
         <intent android:action="org.lineageos.settings.device.GESTURE_SETTINGS" />
     </lineageos.preference.RemotePreference> -->
 
-        <Preference
+          <!-- Touchscreen Gestures -->
+        <PreferenceScreen
             android:key="touchscreen_gestures"
             android:title="@string/touchscreen_gesture_settings_title"
-            android:fragment="com.cyanogenmod.settings.device.TouchscreenGestureSettings" />
+            android:persistent="false" >
+                <intent android:action="android.intent.action.MAIN"
+                    android:targetPackage="com.cyanogenmod.settings.device"
+                    android:targetClass="com.cyanogenmod.settings.device.TouchscreenGestureSettings" />
+        </PreferenceScreen>
 
         <Preference
             android:key="gestures_dashboard"
