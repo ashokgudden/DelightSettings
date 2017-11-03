@@ -24,7 +24,7 @@
         android:key="gesture_settings_category"
         android:title="@string/gesture_preference_inside_title">
 
-    <org.lineageos.internal.lineageparts.LineagePartsPreference
+    <!--org.lineageos.internal.lineageparts.LineagePartsPreference
         android:key="touchscreen_gesture_settings"
         lineage:requiresFeature="lineagehardware:FEATURE_TOUCHSCREEN_GESTURES" />
 
@@ -35,7 +35,12 @@
             lineage:replacesKey="touchscreen_gesture_settings"
             lineage:requiresFeature="lineagehardware:FEATURE_TOUCHSCREEN_GESTURES">
         <intent android:action="org.lineageos.settings.device.GESTURE_SETTINGS" />
-    </lineageos.preference.RemotePreference>
+    </lineageos.preference.RemotePreference> -->
+
+        <Preference
+            android:key="touchscreen_gestures"
+            android:title="@string/touchscreen_gesture_settings_title"
+            android:fragment="com.lineageos.settings.device.TouchscreenGestureSettings" />
 
         <Preference
             android:key="gestures_dashboard"
