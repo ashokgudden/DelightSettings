@@ -177,7 +177,7 @@ public class CustomHeader extends SettingsPreferenceFragment implements
     private boolean isBrowseHeaderAvailable() {
         PackageManager pm = getPackageManager();
         Intent browse = new Intent();
-        browse.setClassName("org.omnirom.omnistyle", "org.omnirom.omnistyle.PickHeaderActivity");
+        browse.setClassName("org.omnirom.omnistyle", "org.omnirom.omnistyle.BrowseHeaderActivity");
         return pm.resolveActivity(browse, 0) != null;
     }
 
