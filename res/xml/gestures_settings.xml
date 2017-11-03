@@ -40,7 +40,7 @@
         <Preference
             android:key="touchscreen_gestures"
             android:title="@string/touchscreen_gesture_settings_title"
-            android:fragment="com.lineageos.settings.device.TouchscreenGestureSettings" />
+            android:fragment="com.cyanogenmod.settings.device.TouchscreenGestureSettings" />
 
         <Preference
             android:key="gestures_dashboard"

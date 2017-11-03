@@ -22,7 +22,7 @@
     <Preference
         android:key="alert_slider_settings"
         android:title="@string/alert_slider_title"
-        android:fragment="com.lineageos.settings.device.ButtonSettings" />
+        android:fragment="com.cyanogenmod.settings.device.ButtonSettings" />
 
     <SwitchPreference
         android:key="enable_hw_keys"
