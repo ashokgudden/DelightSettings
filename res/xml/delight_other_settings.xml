@@ -33,12 +33,6 @@
         android:summary="@string/enable_mtp_dirtyhack_summary"
         android:defaultValue="true" />
 
-    <com.delight.settings.preferences.GlobalSettingSwitchPreference
-        android:key="show_cpu_overlay"
-        android:title="@string/show_cpu_title"
-        android:summary="@string/show_cpu_summary"
-        android:defaultValue="false" />
-
     <com.delight.settings.preferences.SystemSettingSwitchPreference
         android:key="toast_icon"
         android:title="@string/toast_icon_title"
