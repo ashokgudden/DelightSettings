@@ -18,11 +18,6 @@
         xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
     <com.delight.settings.preferences.SystemSettingSwitchPreference
-        android:key="double_tap_sleep_lockscreen"
-        android:title="@string/double_tap_sleep_lockscreen"
-        android:defaultValue="true" />
-
-    <com.delight.settings.preferences.SystemSettingSwitchPreference
         android:key="fp_unlock_keystore"
         android:title="@string/fp_unlock_keystore_title"
         android:summary="@string/fp_unlock_keystore_summary"

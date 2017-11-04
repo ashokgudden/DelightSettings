@@ -252,4 +252,11 @@
     <string name="display_rotation_270_title">270 degrees</string>
     <string name="display_lockscreen_rotation_title">Lock screen</string>
 
+    <string name="gesture_preference_title">All Gestures in one place.</string>
+    <string name="gesture_preference_inside_title">Gestures.</string>
+    <string name="gesture_preference_aosp">AOSP gestures</string>
+
+    <string name="gesture_preference_title">All Gestures in one place.</string>
+    <string name="gesture_preference_inside_title">Gestures</string>
+    <string name="gesture_preference_aosp">AOSP gestures</string>
 </resources>

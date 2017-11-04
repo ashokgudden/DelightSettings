@@ -26,11 +26,6 @@
     </Preference>
 
     <com.delight.settings.preferences.SystemSettingSwitchPreference
-        android:key="double_tap_sleep_gesture"
-        android:title="@string/double_tap_sleep_gesture_title"
-        android:defaultValue="true" />
-
-    <com.delight.settings.preferences.SystemSettingSwitchPreference
         android:key="network_traffic_state"
         android:title="@string/network_traffic_state_title"
         android:defaultValue="true" />

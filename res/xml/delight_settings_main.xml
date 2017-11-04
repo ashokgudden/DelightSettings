@@ -121,10 +121,10 @@
         <!-- Gestures
             android:icon="@drawable/ic_settings_gestures" -->
         <Preference
-            android:key="gestures_dashboard"
+            android:key="gestures_main_dashboard"
             android:title="@string/gesture_preference_title"
             android:summary="@string/gesture_preference_summary"
-            android:fragment="com.android.settings.system.GesturesFragment" />
+            android:fragment="com.delight.settings.fragments.GestureSettings" />
 
     </PreferenceCategory>
 

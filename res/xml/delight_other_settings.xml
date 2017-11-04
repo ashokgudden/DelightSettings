@@ -31,11 +31,6 @@
             android:defaultValue="30" />
     </PreferenceCategory>
 
-    <Preference
-       android:key="gesture_anywhere"
-       android:fragment="com.delight.settings.gestureanywhere.GestureAnywhereSettings"
-       android:title="@string/gesture_anywhere_title" />
-
     <com.delight.settings.preferences.SystemSettingSwitchPreference
         android:key="screenshot_sound"
         android:title="@string/screenshot_sound_title"
