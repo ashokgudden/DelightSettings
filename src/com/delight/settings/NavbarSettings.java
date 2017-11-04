@@ -40,9 +40,9 @@ public class NavbarSettings extends SettingsPreferenceFragment implements
         addPreferencesFromResource(R.xml.delight_navbar_settings);
         ContentResolver resolver = getActivity().getContentResolver();
 
-        mNavbarToggle = (SwitchPreference) findPreference("navigation_bar_show");
+        mNavbarToggle = (SwitchPreference) findPreference("navigation_bar_enabled");
         boolean enabled = Settings.System.getIntForUser(
-                resolver, Settings.System.NAVIGATION_BAR_SHOW,
+                resolver, Settings.System.NAVIGATION_BAR_ENABLED,
                 getActivity().getResources().getBoolean(
                 com.android.internal.R.bool.config_showNavigationBar) ? 1 : 0,
                 UserHandle.USER_CURRENT) == 1;
@@ -60,7 +60,7 @@ public class NavbarSettings extends SettingsPreferenceFragment implements
         if (preference == mNavbarToggle) {
             boolean value = (Boolean) newValue;
             Settings.System.putIntForUser(getActivity().getContentResolver(),
-                    Settings.System.NAVIGATION_BAR_SHOW, value ? 1 : 0,
+                    Settings.System.NAVIGATION_BAR_ENABLED, value ? 1 : 0,
                     UserHandle.USER_CURRENT);
             mNavbarToggle.setChecked(value);
             return true;
