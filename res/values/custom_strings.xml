@@ -180,5 +180,9 @@
 
     <!-- Matlog -->
    <string name="matlog_title">Matlog</string>
+
    <string name="matlog_title_summary">Collect logs for debug puruposes.</string>
+    <!-- Small quick settings scroller -->
+    <string name="qqs_scroll_title">Scroll small QS tiles</string>
+    <string name="qqs_scroll_summary">Allow scrolling through the small QS tiles</string>
 </resources>

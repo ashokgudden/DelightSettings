@@ -73,6 +73,12 @@
             android:summary="@string/qs_bt_advanced_summary"
             android:defaultValue="true" />
 
+        <com.delight.settings.preferences.SystemSettingSwitchPreference
+            android:key="qs_quickbar_scroll_enabled"
+            android:title="@string/qqs_scroll_title"
+            android:summary="@string/qqs_scroll_summary"
+            android:defaultValue="true"/>
+
     </PreferenceCategory>
 
     <PreferenceCategory
