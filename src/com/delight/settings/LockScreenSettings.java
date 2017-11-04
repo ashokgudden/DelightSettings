@@ -15,7 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
-package com.delight.settings.fragments;
+package com.delight.settings;
 
 import com.android.internal.logging.nano.MetricsProto;
 
@@ -79,12 +79,14 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
             boolean value = (Boolean) newValue;
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.FINGERPRINT_SUCCESS_VIB, value ? 1 : 0);
+            mFingerprintVib.setChecked(value);
             return true;
         } else if (preference == mFpKeystore) {
             boolean value = (Boolean) newValue;
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.FP_UNLOCK_KEYSTORE, value ? 1 : 0);
             return true;
+            mFpKeystore.setChecked(value);
         }
         return false;
     }

@@ -51,7 +51,7 @@
         android:summary="@string/hide_apps_from_recents_summary" >
              <intent android:action="android.intent.action.MAIN"
                  android:targetPackage="com.android.settings"
-                 android:targetClass="com.nitrogen.settings.fragments.HAFRAppListActivity" />
+                 android:targetClass="com.delight.settings.fragments.HAFRAppListActivity" />
      </Preference>
 
 </PreferenceScreen>

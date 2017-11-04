@@ -62,14 +62,17 @@ public class PowerSettings extends SettingsPreferenceFragment implements
             mTorchPowerButton.setValue(Integer.toString(mTorchPowerButtonValue));
             mTorchPowerButton.setSummary(mTorchPowerButton.getEntry());
             mTorchPowerButton.setOnPreferenceChangeListener(this);
-
+                
+            mTorchLongPressPowerTimeout = (ListPreference) findPreference(KEY_TORCH_LONG_PRESS_POWER_TIMEOUT);
+            int torchLongPressPowerTimeout = Settings.System.getInt(resolver,
+                    Settings.System.TORCH_LONG_PRESS_POWER_TIMEOUT, 0);  
             if (mTorchPowerButtonValue == 2) {
-                mTorchLongPressPowerTimeout = (ListPreference) findPreference(KEY_TORCH_LONG_PRESS_POWER_TIMEOUT);
-                int torchLongPressPowerTimeout = Settings.System.getInt(resolver,
-                        Settings.System.TORCH_LONG_PRESS_POWER_TIMEOUT, 0);
+                mTorchLongPressPowerTimeout.setEnabled(true);
                 mTorchLongPressPowerTimeout.setValue(Integer.toString(torchLongPressPowerTimeout));
                 mTorchLongPressPowerTimeout.setSummary(mTorchLongPressPowerTimeout.getEntry());
                 mTorchLongPressPowerTimeout.setOnPreferenceChangeListener(this);
+            } else if ((mTorchPowerButtonValue == 1) || (mTorchPowerButtonValue == 0)) {
+                mTorchLongPressPowerTimeout.setEnabled(false);
             }
         }
     }
@@ -105,7 +108,7 @@ public class PowerSettings extends SettingsPreferenceFragment implements
             int index = mTorchLongPressPowerTimeout.findIndexOfValue((String) newValue);
             mTorchLongPressPowerTimeout.setSummary(
                     mTorchLongPressPowerTimeout.getEntries()[index]);
-            Settings.System.putInt(resolver, TORCH_LONG_PRESS_POWER_TIMEOUT, mTorchLongPressPowerTimeoutValue);
+            Settings.System.putInt(resolver, Settings.System.TORCH_LONG_PRESS_POWER_TIMEOUT, mTorchLongPressPowerTimeoutValue);
             return true;
         }
 

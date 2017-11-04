@@ -31,7 +31,7 @@ import com.android.settings.R;
 import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.SettingsPreferenceFragment;
 
-import com.gzr.wolvesden.preference.CustomSeekBarPreference;
+import com.delight.settings.preferences.CustomSeekBarPreference;
 
 public class GestureAnywhereSettings extends SettingsPreferenceFragment implements
         OnPreferenceChangeListener {

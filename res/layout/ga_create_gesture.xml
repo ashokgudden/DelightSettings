@@ -41,7 +41,7 @@
 
     </LinearLayout>
 
-    <com.gzr.wolvesden.gestureanywhere.GestureAnywhereGestureOverlayView
+    <com.delight.settings.gestureanywhere.GestureAnywhereGestureOverlayView
         android:id="@+id/gestures_overlay"
         android:layout_width="match_parent"
         android:layout_height="0dip"

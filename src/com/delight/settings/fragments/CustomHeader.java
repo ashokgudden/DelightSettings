@@ -15,7 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
 */
-package com.delight.settings.fragments.CustomHeader;
+package com.delight.settings.fragments;
 
 import android.content.Context;
 import android.content.Intent;
@@ -52,7 +52,6 @@ import java.util.Map;
 public class CustomHeader extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener, Indexable {
     private static final String TAG = "Custom_Header";
-    private static final String CUSTOM_WALL_BROWSE = "custom_wall_browse";
     private static final String CUSTOM_HEADER_BROWSE = "custom_header_browse";
     private static final String CUSTOM_HEADER_IMAGE = "status_bar_custom_header";
     private static final String DAYLIGHT_HEADER_PACK = "daylight_header_pack";
@@ -61,7 +60,6 @@ public class CustomHeader extends SettingsPreferenceFragment implements
     private static final String STATUS_BAR_CUSTOM_HEADER = "status_bar_custom_header";
     private static final String CUSTOM_HEADER_ENABLED = "status_bar_custom_header";
 
-    private Preference mWallBrowse;
     private Preference mHeaderBrowse;
     private ListPreference mDaylightHeaderPack;
     private SeekBarPreference mHeaderShadow;
@@ -78,9 +76,6 @@ public class CustomHeader extends SettingsPreferenceFragment implements
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.custom_header);
-
-        mWallBrowse = findPreference(CUSTOM_WALL_BROWSE);
-        mWallBrowse.setEnabled(isBrowseWallsAvailable());
 
         mHeaderBrowse = findPreference(CUSTOM_HEADER_BROWSE);
         mHeaderBrowse.setEnabled(isBrowseHeaderAvailable());
@@ -182,7 +177,7 @@ public class CustomHeader extends SettingsPreferenceFragment implements
     private boolean isBrowseHeaderAvailable() {
         PackageManager pm = getPackageManager();
         Intent browse = new Intent();
-        browse.setClassName("org.omnirom.omnistyle", "org.omnirom.omnistyle.PickHeaderActivity");
+        browse.setClassName("org.omnirom.omnistyle", "org.omnirom.omnistyle.BrowseHeaderActivity");
         return pm.resolveActivity(browse, 0) != null;
     }
 
