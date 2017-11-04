@@ -17,6 +17,20 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+    <PreferenceCategory
+        android:key="apps_security"
+        android:title="@string/apps_security_options_title" >
+
+        <ListPreference
+            android:key="sms_outgoing_check_max_count"
+            android:title="@string/sms_outgoing_check_max_count_title"
+            android:dialogTitle="@string/sms_outgoing_check_max_count_dialog"
+            android:entries="@array/sms_outgoing_check_max_count_entries"
+            android:entryValues="@array/sms_outgoing_check_max_count_values"
+            android:summary="%s"
+            android:defaultValue="30" />
+    </PreferenceCategory>
+
     <Preference
        android:key="gesture_anywhere"
        android:fragment="com.delight.settings.gestureanywhere.GestureAnywhereSettings"
@@ -32,12 +46,6 @@
         android:title="@string/enable_mtp_dirtyhack_title"
         android:summary="@string/enable_mtp_dirtyhack_summary"
         android:defaultValue="true" />
-
-    <com.delight.settings.preferences.SystemSettingSwitchPreference
-        android:key="toast_icon"
-        android:title="@string/toast_icon_title"
-        android:summary="@string/toast_icon_summary"
-        android:defaultValue="false" />
 
     <!-- Custom Rotation -->
     <Preference
@@ -70,17 +78,4 @@
                 android:targetClass="com.pluscubed.logcat.ui.LogcatActivity" />
     </PreferenceScreen>
 
-    <PreferenceCategory
-        android:key="apps_security"
-        android:title="@string/apps_security_options_title" >
-
-        <ListPreference
-            android:key="sms_outgoing_check_max_count"
-            android:title="@string/sms_outgoing_check_max_count_title"
-            android:dialogTitle="@string/sms_outgoing_check_max_count_dialog"
-            android:entries="@array/sms_outgoing_check_max_count_entries"
-            android:entryValues="@array/sms_outgoing_check_max_count_values"
-            android:summary="%s"
-            android:defaultValue="30" />
-    </PreferenceCategory>
 </PreferenceScreen>
