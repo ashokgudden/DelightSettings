@@ -85,8 +85,8 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
             boolean value = (Boolean) newValue;
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.FP_UNLOCK_KEYSTORE, value ? 1 : 0);
-            return true;
             mFpKeystore.setChecked(value);
+            return true;
         }
         return false;
     }

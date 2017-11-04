@@ -98,9 +98,11 @@
         android:key="delight_system"
         android:title="@string/delight_system" >
 
+        <!-- Gestures
+            android:summary="@string/app_ops_settings_summary" -->
         <Preference
+            android:key="appops_main_dashboard"
             android:title="@string/app_ops_settings"
-            android:summary="@string/app_ops_settings_summary"
             android:fragment="com.android.settings.applications.AppOpsSummary"/>
 
         <Preference
@@ -119,11 +121,11 @@
              android:title="@string/alarm_blocker" />
 
         <!-- Gestures
-            android:icon="@drawable/ic_settings_gestures" -->
+            android:icon="@drawable/ic_settings_gestures"
+            android:summary="@string/gesture_summary" -->
         <Preference
             android:key="gestures_main_dashboard"
             android:title="@string/gesture_preference_title"
-            android:summary="@string/gesture_preference_summary"
             android:fragment="com.delight.settings.fragments.GestureSettings" />
 
     </PreferenceCategory>
