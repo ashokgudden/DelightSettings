@@ -214,4 +214,6 @@
     <string name="app_ops_settings">APP-OPS</string>
     <string name="app_ops_settings_summary">Tweak permissions of individual apps </string>
 
+    <string name="qs_small_tiles_title">Small QS tiles</string>
+
 </resources>
