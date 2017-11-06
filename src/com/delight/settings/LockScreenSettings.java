@@ -27,15 +27,18 @@ import android.content.res.Resources;
 import android.hardware.fingerprint.FingerprintManager;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.UserHandle;
+import android.provider.Settings;
 import android.support.v14.preference.SwitchPreference;
 import android.support.v7.preference.ListPreference;
 import android.support.v7.preference.Preference;
 import android.support.v7.preference.PreferenceCategory;
 import android.support.v7.preference.PreferenceScreen;
 
-import android.provider.Settings;
+import com.android.internal.widget.LockPatternUtils;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
+
 
 public class LockScreenSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
@@ -43,9 +46,13 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
     private static final String FINGERPRINT_VIB = "fingerprint_success_vib";
     private static final String FP_UNLOCK_KEYSTORE = "fp_unlock_keystore";
 
+    private static final String PREF_SHOW_EMERGENCY_BUTTON = "show_emergency_button";
+    private static final int MY_USER_ID = UserHandle.myUserId();
+
     private FingerprintManager mFingerprintManager;
     private SwitchPreference mFingerprintVib;
     private SwitchPreference mFpKeystore;
+    private SwitchPreference mEmergencyButton;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -54,7 +61,18 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
 
         ContentResolver resolver = getActivity().getContentResolver();
         final PreferenceScreen prefScreen = getPreferenceScreen();
+        final LockPatternUtils lockPatternUtils = new LockPatternUtils(getActivity());
+
         Resources resources = getResources();
+
+        mEmergencyButton = (SwitchPreference) findPreference(PREF_SHOW_EMERGENCY_BUTTON);
+        if (lockPatternUtils.isSecure(MY_USER_ID)) {
+            mEmergencyButton.setChecked((Settings.System.getInt(resolver,
+                Settings.System.SHOW_EMERGENCY_BUTTON, 1) == 1));
+            mEmergencyButton.setOnPreferenceChangeListener(this);
+        } else {
+            prefScreen.removePreference(mEmergencyButton);
+        }
 
         mFingerprintManager = (FingerprintManager) getActivity().getSystemService(Context.FINGERPRINT_SERVICE);
         mFingerprintVib = (SwitchPreference) findPreference(FINGERPRINT_VIB);
@@ -86,6 +104,12 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.FP_UNLOCK_KEYSTORE, value ? 1 : 0);
             mFpKeystore.setChecked(value);
+            return true;
+        } else if  (preference == mEmergencyButton) {
+            boolean value = (Boolean) newValue;
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.SHOW_EMERGENCY_BUTTON, value ? 1 : 0);
+            mEmergencyButton.setChecked(value);
             return true;
         }
         return false;

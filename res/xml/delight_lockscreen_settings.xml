@@ -24,6 +24,13 @@
         android:persistent="false" />
 
     <com.delight.settings.preferences.SystemSettingSwitchPreference
+        android:key="show_emergency_button"
+        android:title="@string/emergency_button_title"
+        android:summaryOn="@string/emergency_button_summary_on"
+        android:summaryOff="@string/emergency_button_summary_off"
+        android:defaultValue="true" />
+
+    <com.delight.settings.preferences.SystemSettingSwitchPreference
         android:key="lockscreen_media_metadata"
         android:title="@string/media_art_title"
         android:summary="@string/media_art_summary"
