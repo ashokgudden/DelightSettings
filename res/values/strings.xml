@@ -311,6 +311,5 @@
     <string name="weather_icon_pack_note">Note\u003a you can install new icon packs from play store by searching for \"Chronus icons\"</string>
 
     <string name="batterybar_title">Battery bar</string>
-    <string name="qs_small_tiles_title">Small QS tiles</string>
 
 </resources>

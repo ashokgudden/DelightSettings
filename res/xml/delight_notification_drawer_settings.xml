@@ -81,8 +81,8 @@
 
         <com.delight.settings.preferences.SecureSettingSwitchPreference
             android:key="qs_wifi_easy_toggle"
-            android:title="@string/wifi_advanced_title"
-            android:summary="@string/wifi_advanced_summary"
+            android:title="@string/qs_wifi_advanced_title" 
+            android:summary="@string/qs_wifi_advanced_summary"
             android:defaultValue="true" />
 
         <com.delight.settings.preferences.SecureSettingSwitchPreference
