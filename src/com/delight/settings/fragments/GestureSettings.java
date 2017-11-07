@@ -44,7 +44,7 @@ public class GestureSettings extends SettingsPreferenceFragment implements
                 getActivity().getResources().getBoolean(
                 com.android.internal.R.bool.config_showNavigationBar) ? 1 : 0,
                 UserHandle.USER_CURRENT) == 1;
-        mNavbarSleep.setChecked(enabled);
+        mNavbarSleep.setEnabled(enabled);
         }
 
     @Override
