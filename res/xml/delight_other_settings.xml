@@ -49,15 +49,27 @@
     </PreferenceScreen>
 
     <com.delight.settings.preferences.SystemSettingSwitchPreference
-        android:key="screenshot_sound"
-        android:title="@string/screenshot_sound_title"
-        android:defaultValue="true" />
-
-    <com.delight.settings.preferences.SystemSettingSwitchPreference
         android:key="mtp_dirty_hack"
         android:title="@string/enable_mtp_dirtyhack_title"
         android:summary="@string/enable_mtp_dirtyhack_summary"
         android:defaultValue="true" />
+
+    <PreferenceCategory
+        android:key="screenshots_cat"
+        android:title="@string/screenshots_category" >
+
+        <com.delight.settings.preferences.SystemSettingSwitchPreference
+            android:key="screenshot_sound"
+            android:title="@string/screenshot_sound_title"
+            android:defaultValue="true" />
+
+        <com.delight.settings.preferences.SystemSettingSwitchPreference
+            android:key="three_finger_gesture"
+            android:title="@string/three_finger_gesture"
+            android:summary="@string/three_finger_gesture_summary"
+            android:defaultValue="false" />
+
+    </PreferenceCategory>
 
     <PreferenceCategory
         android:key="incall_vib_options"
