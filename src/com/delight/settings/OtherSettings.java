@@ -34,6 +34,8 @@ public class OtherSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
     private static final String APPS_SECURITY = "apps_security";
+    private static final String INCALL_VIBRATIONS = "incall_vib_options";
+
     private static final String SMS_OUTGOING_CHECK_MAX_COUNT = "sms_outgoing_check_max_count";
 
     private ListPreference mSmsCount;
@@ -48,6 +50,7 @@ public class OtherSettings extends SettingsPreferenceFragment implements
         ContentResolver resolver = getActivity().getContentResolver();
 
         PreferenceCategory appsSecCategory = (PreferenceCategory) findPreference(APPS_SECURITY);
+        PreferenceCategory incallvibrations = (PreferenceCategory) findPreference(INCALL_VIBRATIONS);
 
         mSmsCount = (ListPreference) findPreference(SMS_OUTGOING_CHECK_MAX_COUNT);
         mSmsCountValue = Settings.Global.getInt(resolver,
@@ -58,6 +61,7 @@ public class OtherSettings extends SettingsPreferenceFragment implements
         if (!Utils.isVoiceCapable(getActivity())) {
             appsSecCategory.removePreference(mSmsCount);
             prefScreen.removePreference(appsSecCategory);
+            prefScreen.removePreference(incallvibrations);
         }
     }
 
