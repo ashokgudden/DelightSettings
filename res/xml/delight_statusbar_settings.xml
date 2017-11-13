@@ -40,5 +40,6 @@
     <PreferenceScreen
             android:key="category_network_traffic"
             android:title="@string/network_traffic_title"
+            android:summary="@string/network_traffic_summary"
             android:fragment="com.delight.settings.fragments.NetworkTraffic" />
 </PreferenceScreen>
