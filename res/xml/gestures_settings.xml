@@ -33,6 +33,12 @@
            android:fragment="com.delight.settings.gestureanywhere.GestureAnywhereSettings"
            android:title="@string/gesture_anywhere_title" />
 
+        <com.delight.settings.preferences.SystemSettingSwitchPreference
+            android:key="pocket_judge"
+            android:title="@string/pocket_judge_title"
+            android:summary="@string/pocket_judge_summary"
+            android:defaultValue="false" />
+
     </PreferenceCategory>
 
     <PreferenceCategory
