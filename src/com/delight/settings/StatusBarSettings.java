@@ -17,10 +17,14 @@ package com.delight.settings;
 
 import android.content.ContentResolver;
 import android.content.res.Resources;
+import android.net.TrafficStats;
 import android.os.Bundle;
+import android.support.v14.preference.SwitchPreference;
 import android.support.v7.preference.ListPreference;
 import android.support.v7.preference.Preference;
+import android.support.v7.preference.PreferenceGroup;
 import android.support.v7.preference.PreferenceScreen;
+import android.support.v7.preference.PreferenceCategory;
 import android.provider.Settings;
 
 import com.android.internal.logging.nano.MetricsProto;
@@ -28,13 +32,25 @@ import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 
+import com.android.internal.util.omni.DeviceUtils;
+
 public class StatusBarSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
+
+    private static final String NETWORK_TRAFFIC_ROOT = "category_network_traffic";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        addPreferencesFromResource(R.xml.delight_statusbar_settings);
 
+        PreferenceScreen prefScreen = getPreferenceScreen();
+
+        // TrafficStats will return UNSUPPORTED if the device does not support it.
+        if (TrafficStats.getTotalTxBytes() == TrafficStats.UNSUPPORTED ||
+                TrafficStats.getTotalRxBytes() == TrafficStats.UNSUPPORTED) {
+            prefScreen.removePreference(findPreference(NETWORK_TRAFFIC_ROOT));
+        }
     }
 
     @Override

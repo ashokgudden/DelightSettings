@@ -36,4 +36,9 @@
             android:title="@string/ime_switcher_notify"
             android:summary="@string/ime_switcher_notify_summary"
             android:defaultValue="false" />
+
+    <PreferenceScreen
+            android:key="category_network_traffic"
+            android:title="@string/network_traffic_title"
+            android:fragment="com.delight.settings.fragments.NetworkTraffic" />
 </PreferenceScreen>
