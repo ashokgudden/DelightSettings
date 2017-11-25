@@ -45,7 +45,6 @@
     <!-- Double tap preferences. -->
     <string name="doubletap_preference_title">Double tap to sleep</string>
     <string name="double_tap_sleep_gesture_statusbar_title">Statusbar</string>
-    <string name="double_tap_sleep_navbar">Navbar</string>
     <string name="double_tap_sleep_lockscreen">Lockscreen</string>
 
     <string name="swap_volume_buttons">Swap volume buttons rotation based</string>
@@ -113,8 +112,6 @@
     <string name="status_bar_icon_blacklist_summary">Configure what icons are shown on status bar</string>
     <string name="lockscreen_shortcuts_title">Lockscreen shortcuts</string>
     <string name="lockscreen_shortcuts_summary">Lockscreen bottom shortcuts</string>
-    <string name="navbar_buttons_title">Navbar buttons</string>
-    <string name="navbar_buttons_summary">Navbar layout and custom buttons</string>
     <string name="qs_brightness_slider_title">Brightness slider</string>
     <string name="qs_brightness_slider_summary">Show brightness slider on quick settings panel</string>
     <string name="vol_dnd_category_title">Do not disturb mode</string>
@@ -151,9 +148,6 @@
     <!-- Power menu on secure lockscreen -->
     <string name="lockscreen_power_menu_disabled_title">No power menu when locked</string>
     <string name="lockscreen_power_menu_disabled_summary">Disable power menu on secure lockscreen</string>
-
-    <!-- Toggle navigation bar -->
-    <string name="navigation_bar_enabled_title">Enable navigation bar</string>
 
     <string name="recents_icon_pack_title">Icon Pack</string>
     <string name="recents_icon_pack_summary">Apply a custom icon pack for Recents panel</string>
