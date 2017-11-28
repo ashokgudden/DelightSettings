@@ -28,23 +28,12 @@ import java.util.ArrayList;
 public class GestureSettings extends SettingsPreferenceFragment implements
         OnPreferenceChangeListener {
 
-    private static final String KEY_DOUBLE_TAP_SLEEP_NAVBAR = "double_tap_sleep_navbar";
-
-    SystemSettingSwitchPreference mNavbarSleep;
-
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
         addPreferencesFromResource(R.xml.gestures_settings);
         ContentResolver resolver = getActivity().getContentResolver();
 
-        mNavbarSleep = (SystemSettingSwitchPreference) findPreference(KEY_DOUBLE_TAP_SLEEP_NAVBAR);
-        boolean enabled = Settings.Secure.getIntForUser(
-                resolver, Settings.Secure.NAVIGATION_BAR_ENABLED,
-                getActivity().getResources().getBoolean(
-                com.android.internal.R.bool.config_showNavigationBar) ? 1 : 0,
-                UserHandle.USER_CURRENT) == 1;
-        mNavbarSleep.setEnabled(enabled);
         }
 
     @Override
