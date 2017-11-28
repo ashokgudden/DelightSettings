@@ -16,12 +16,10 @@
  -->
 
 <resources>
-    <dimen name="alert_dialog_padding_material">20dp</dimen>
 
     <!-- Gesture Anywhere -->
     <dimen name="ga_gesture_thumbnail_inset">8dip</dimen>
     <dimen name="ga_gesture_thumbnail_size">64dip</dimen>
-    <dimen name="shortcut_picker_left_padding">70dip</dimen>
 
     <!-- Navbar height -->
     <integer name="navigation_bar_height_min_percent">65</integer>

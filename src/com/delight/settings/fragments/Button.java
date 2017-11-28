@@ -43,7 +43,7 @@ import com.android.internal.utils.du.DUActionUtils;
 import com.delight.settings.preferences.ActionFragment;
 import com.delight.settings.preferences.CustomSeekBarPreference;
 
-public class ButtonSettings extends ActionFragment implements OnPreferenceChangeListener {
+public class Button extends ActionFragment implements OnPreferenceChangeListener {
 
     //Keys
     private static final String KEY_BUTTON_BRIGHTNESS = "button_brightness";
