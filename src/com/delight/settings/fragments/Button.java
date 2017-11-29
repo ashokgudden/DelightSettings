@@ -35,13 +35,13 @@ import android.provider.Settings;
 import com.android.settings.R;
 
 import com.delight.settings.preferences.CustomSeekBarPreference;
+import com.delight.settings.preferences.SystemSettingSwitchPreference;
 
 import com.android.internal.logging.nano.MetricsProto;
 import com.android.internal.utils.du.ActionConstants;
 import com.android.internal.utils.du.DUActionUtils;
 
 import com.delight.settings.preferences.ActionFragment;
-import com.delight.settings.preferences.CustomSeekBarPreference;
 
 public class Button extends ActionFragment implements OnPreferenceChangeListener {
 
@@ -49,6 +49,9 @@ public class Button extends ActionFragment implements OnPreferenceChangeListener
     private static final String KEY_BUTTON_BRIGHTNESS = "button_brightness";
     private static final String KEY_BUTTON_BRIGHTNESS_SW = "button_brightness_sw";
     private static final String KEY_BACKLIGHT_TIMEOUT = "backlight_timeout";
+    private static final String KEY_BUTTON_BACKLIGHT_ON_TOUCH_ONLY = "button_backlight_on_touch_only";
+    private static final String KEY_ANBI_ENABLED = "anbi_enabled";
+    private static final String KEY_ALLOW_INCALL_HOME = "allow_incall_home";
     private static final String HWKEY_DISABLE = "hardware_keys_disable";
 
     // category keys
@@ -68,6 +71,9 @@ public class Button extends ActionFragment implements OnPreferenceChangeListener
     private ListPreference mBacklightTimeout;
     private CustomSeekBarPreference mButtonBrightness;
     private SwitchPreference mButtonBrightness_sw;
+    private SystemSettingSwitchPreference mTouchOnly;
+    private SystemSettingSwitchPreference mAnbiEnabled;
+    private SystemSettingSwitchPreference mAllowInCallHome;
     private SwitchPreference mHwKeyDisable;
 
     @Override
@@ -94,6 +100,18 @@ public class Button extends ActionFragment implements OnPreferenceChangeListener
             final boolean variableBrightness = getResources().getBoolean(
                     com.android.internal.R.bool.config_deviceHasVariableButtonBrightness);
 
+            mTouchOnly =
+                    (SystemSettingSwitchPreference) findPreference(KEY_BUTTON_BACKLIGHT_ON_TOUCH_ONLY);
+            mTouchOnly.setEnabled(keysDisabled == 0);
+
+            mAnbiEnabled =
+                    (SystemSettingSwitchPreference) findPreference(KEY_ANBI_ENABLED);
+            mAnbiEnabled.setEnabled(keysDisabled == 0);
+
+            mAllowInCallHome =
+                    (SystemSettingSwitchPreference) findPreference(KEY_ALLOW_INCALL_HOME);
+            mAllowInCallHome.setEnabled(keysDisabled == 0);
+
             mBacklightTimeout =
                     (ListPreference) findPreference(KEY_BACKLIGHT_TIMEOUT);
 
@@ -109,6 +127,7 @@ public class Button extends ActionFragment implements OnPreferenceChangeListener
                             Settings.System.BUTTON_BACKLIGHT_TIMEOUT, 5000);
                     mBacklightTimeout.setValue(Integer.toString(BacklightTimeout));
                     mBacklightTimeout.setSummary(mBacklightTimeout.getEntry());
+                    mBacklightTimeout.setEnabled(keysDisabled == 0);
                 }
 
                 if (variableBrightness) {
@@ -117,6 +136,7 @@ public class Button extends ActionFragment implements OnPreferenceChangeListener
                         int ButtonBrightness = Settings.System.getInt(getContentResolver(),
                                 Settings.System.BUTTON_BRIGHTNESS, 255);
                         mButtonBrightness.setValue(ButtonBrightness / 1);
+                        mButtonBrightness.setEnabled(keysDisabled == 0);
                         mButtonBrightness.setOnPreferenceChangeListener(this);
                     }
                 } else {
@@ -124,6 +144,7 @@ public class Button extends ActionFragment implements OnPreferenceChangeListener
                     if (mButtonBrightness_sw != null) {
                         mButtonBrightness_sw.setChecked((Settings.System.getInt(getContentResolver(),
                                 Settings.System.BUTTON_BRIGHTNESS, 1) == 1));
+                        mButtonBrightness_sw.setEnabled(keysDisabled == 0);
                         mButtonBrightness_sw.setOnPreferenceChangeListener(this);
                     }
                 }
@@ -197,7 +218,17 @@ public class Button extends ActionFragment implements OnPreferenceChangeListener
             boolean value = (Boolean) newValue;
             Settings.Secure.putInt(getContentResolver(), Settings.Secure.HARDWARE_KEYS_DISABLE,
                     value ? 1 : 0);
+            mTouchOnly.setEnabled(!value);
+            mAnbiEnabled.setEnabled(!value);
             setActionPreferencesEnabled(!value);
+            mAllowInCallHome.setEnabled(!value);
+            mBacklightTimeout.setEnabled(!value);
+            if (mButtonBrightness_sw != null) {
+                mButtonBrightness_sw.setEnabled(!value);
+            } else if (mButtonBrightness != null) {
+                mButtonBrightness.setEnabled(!value);
+            }
+            
             return true;
         }
         return false;

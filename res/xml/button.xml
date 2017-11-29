@@ -44,13 +44,15 @@
             android:entryValues="@array/backlight_timeout_values"
             android:key="backlight_timeout"
             android:persistent="false"
-            android:title="@string/backlight_timeout_title" />
+            android:title="@string/backlight_timeout_title"
+            android:dependency="button_brightness_sw" />
 
         <com.delight.settings.preferences.SystemSettingSwitchPreference
             android:key="button_backlight_on_touch_only"
             android:title="@string/button_backlight_on_touch_only_title"
             android:summary="@string/button_backlight_on_touch_only_summary"
-            android:defaultValue="false" />
+            android:defaultValue="false"
+            android:dependency="button_brightness_sw" />
 
         <com.delight.settings.preferences.SystemSettingSwitchPreference
             android:key="anbi_enabled"
