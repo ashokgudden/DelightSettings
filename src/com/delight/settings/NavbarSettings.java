@@ -18,6 +18,7 @@ package com.delight.settings;
 import android.content.ContentResolver;
 import android.content.res.Resources;
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.UserHandle;
 import android.support.v7.preference.ListPreference;
 import android.support.v7.preference.Preference;
@@ -65,6 +66,9 @@ public class NavbarSettings extends SettingsPreferenceFragment implements
     private CustomSeekBarPreference mBarHeightLand;
     private CustomSeekBarPreference mBarWidth;
     private Preference mPulseSettings;
+
+    private boolean mIsNavSwitchingMode = false;
+    private Handler mHandler;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -115,6 +119,8 @@ public class NavbarSettings extends SettingsPreferenceFragment implements
             mBarHeightLand.setValue(size);
             mBarHeightLand.setOnPreferenceChangeListener(this);
         }
+
+        mHandler = new Handler();
     }
 
     private void updateBarModeSettings(int mode) {
@@ -173,10 +179,20 @@ public class NavbarSettings extends SettingsPreferenceFragment implements
             updateBarModeSettings(mode);
             return true;
         } else if (preference.equals(mNavbarVisibility)) {
+            if (mIsNavSwitchingMode) {
+                return false;
+            }
+            mIsNavSwitchingMode = true;
             boolean showing = ((Boolean)newValue);
             Settings.Secure.putInt(resolver,
             Settings.Secure.NAVIGATION_BAR_VISIBLE, showing ? 1 : 0);
             updateBarVisibleAndUpdatePrefs(showing);
+            mHandler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    mIsNavSwitchingMode = false;
+                }
+            }, 1500);
             return true;
         } else if (preference == mBarHeightPort) {
             int val = (Integer) newValue;
