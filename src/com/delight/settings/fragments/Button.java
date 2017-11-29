@@ -54,9 +54,7 @@ public class Button extends ActionFragment implements OnPreferenceChangeListener
     // category keys
     private static final String CATEGORY_HWKEY = "hardware_keys";
     private static final String CATEGORY_HOME = "home_key";
-    private static final String CATEGORY_MENU = "menu_key";
     private static final String CATEGORY_BACK = "back_key";
-    private static final String CATEGORY_ASSIST = "assist_key";
     private static final String CATEGORY_APPSWITCH = "app_switch_key";
 
     // Masks for checking presence of hardware keys.
@@ -65,11 +63,7 @@ public class Button extends ActionFragment implements OnPreferenceChangeListener
     // Must match values in frameworks/base/core/res/res/values/config.xml
     public static final int KEY_MASK_HOME = 0x01;
     public static final int KEY_MASK_BACK = 0x02;
-    public static final int KEY_MASK_MENU = 0x04;
-    public static final int KEY_MASK_ASSIST = 0x08;
     public static final int KEY_MASK_APP_SWITCH = 0x10;
-    public static final int KEY_MASK_CAMERA = 0x20;
-    public static final int KEY_MASK_VOLUME = 0x40;
 
     private ListPreference mBacklightTimeout;
     private CustomSeekBarPreference mButtonBrightness;
@@ -144,8 +138,6 @@ public class Button extends ActionFragment implements OnPreferenceChangeListener
         // read bits for present hardware keys
         final boolean hasHomeKey = (deviceKeys & KEY_MASK_HOME) != 0;
         final boolean hasBackKey = (deviceKeys & KEY_MASK_BACK) != 0;
-        final boolean hasMenuKey = (deviceKeys & KEY_MASK_MENU) != 0;
-        final boolean hasAssistKey = (deviceKeys & KEY_MASK_ASSIST) != 0;
         final boolean hasAppSwitchKey = (deviceKeys & KEY_MASK_APP_SWITCH) != 0;
 
         // load categories and init/remove preferences based on device
@@ -154,10 +146,6 @@ public class Button extends ActionFragment implements OnPreferenceChangeListener
                 (PreferenceCategory) prefScreen.findPreference(CATEGORY_BACK);
         final PreferenceCategory homeCategory =
                 (PreferenceCategory) prefScreen.findPreference(CATEGORY_HOME);
-        final PreferenceCategory menuCategory =
-                (PreferenceCategory) prefScreen.findPreference(CATEGORY_MENU);
-        final PreferenceCategory assistCategory =
-                (PreferenceCategory) prefScreen.findPreference(CATEGORY_ASSIST);
         final PreferenceCategory appSwitchCategory =
                 (PreferenceCategory) prefScreen.findPreference(CATEGORY_APPSWITCH);
 
@@ -174,16 +162,6 @@ public class Button extends ActionFragment implements OnPreferenceChangeListener
         // App switch key (recents)
         if (!hasAppSwitchKey) {
             prefScreen.removePreference(appSwitchCategory);
-        }
-
-        // menu key
-        if (!hasMenuKey) {
-            prefScreen.removePreference(menuCategory);
-        }
-
-        // search/assist key
-        if (!hasAssistKey) {
-            prefScreen.removePreference(assistCategory);
         }
 
         // let super know we can load ActionPreferences
