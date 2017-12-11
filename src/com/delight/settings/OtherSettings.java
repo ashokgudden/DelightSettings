@@ -18,10 +18,13 @@ package com.delight.settings;
 import android.content.ContentResolver;
 import android.content.res.Resources;
 import android.os.Bundle;
+import android.os.SystemProperties;
 import android.support.v7.preference.ListPreference;
 import android.support.v7.preference.Preference;
 import android.support.v7.preference.PreferenceCategory;
 import android.support.v7.preference.PreferenceScreen;
+import com.delight.settings.preferences.SystemSettingSwitchPreference;
+
 import android.provider.Settings;
 
 import com.android.internal.logging.nano.MetricsProto;
@@ -35,11 +38,14 @@ public class OtherSettings extends SettingsPreferenceFragment implements
 
     private static final String APPS_SECURITY = "apps_security";
     private static final String INCALL_VIBRATIONS = "incall_vib_options";
+    private static final String KEY_CAMERA_SOUNDS = "camera_sounds";
+    private static final String PROP_CAMERA_SOUND = "persist.sys.camera-sound";
 
     private static final String SMS_OUTGOING_CHECK_MAX_COUNT = "sms_outgoing_check_max_count";
 
     private ListPreference mSmsCount;
     private int mSmsCountValue;
+    private SystemSettingSwitchPreference mCameraSounds;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -51,6 +57,10 @@ public class OtherSettings extends SettingsPreferenceFragment implements
 
         PreferenceCategory appsSecCategory = (PreferenceCategory) findPreference(APPS_SECURITY);
         PreferenceCategory incallvibrations = (PreferenceCategory) findPreference(INCALL_VIBRATIONS);
+
+        mCameraSounds = (SystemSettingSwitchPreference) findPreference(KEY_CAMERA_SOUNDS);
+        mCameraSounds.setChecked(SystemProperties.getBoolean(PROP_CAMERA_SOUND, true));
+        mCameraSounds.setOnPreferenceChangeListener(this);
 
         mSmsCount = (ListPreference) findPreference(SMS_OUTGOING_CHECK_MAX_COUNT);
         mSmsCountValue = Settings.Global.getInt(resolver,
@@ -77,6 +87,7 @@ public class OtherSettings extends SettingsPreferenceFragment implements
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
+        final String key = preference.getKey();
         ContentResolver resolver = getActivity().getContentResolver();
 
         if (preference == mSmsCount) {
@@ -86,6 +97,15 @@ public class OtherSettings extends SettingsPreferenceFragment implements
                     mSmsCount.getEntries()[index]);
             Settings.Global.putInt(resolver,
                     Settings.Global.SMS_OUTGOING_CHECK_MAX_COUNT, mSmsCountValue);
+            return true;
+        } else if (preference == mCameraSounds) {
+            if (KEY_CAMERA_SOUNDS.equals(key)) {
+                if ((Boolean) newValue) {
+                       SystemProperties.set(PROP_CAMERA_SOUND, "1");
+                } else {
+                       SystemProperties.set(PROP_CAMERA_SOUND, "0");
+                }
+            }
             return true;
         }
         return false;

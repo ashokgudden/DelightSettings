@@ -260,7 +260,7 @@
     <string name="incall_vibrate_disconnect_title">Vibrate on disconnect</string>
 
     <!--3-Finger screenshot-->
-    <string name="screenshots_category">Screenshots</string>
+    <string name="tones_category">Tones</string>
     <string name="three_finger_gesture">Three finger gesture</string>
     <string name="three_finger_gesture_summary">Swipe three finger to screenshot</string>
 
@@ -288,4 +288,8 @@
     <string name="network_traffic_autohide_summary">Hide the traffic monitor when there is no activity</string>
     <string name="network_traffic_autohide_threshold">Inactivity threshold</string>
     <string name="network_traffic_enable_title">Enable</string>
+
+    <!-- Camera shutter sound -->
+    <string name="camera_sounds_title">Camera shutter sound</string>
+    <string name="camera_sounds_summary">Disabling may not work on 3rd party camera apps and in HDR+ mode</string>
 </resources>
